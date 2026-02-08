@@ -1,0 +1,37 @@
+name: Run Manage AI
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+  workflow_dispatch:
+
+jobs:
+  run_script:
+    runs-on: ubuntu-latest
+    # This gives Manage permission to save changes to the database
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Tools
+        run: pip install requests
+
+      - name: Execute Manage
+        run: python manage.py
+      
+      # This step commits the new database changes back to the repo
+      - name: Update Database
+        run: |
+          git config --local user.email "manage@ai.com"
+          git config --local user.name "Manage"
+          git add database.json
+          git diff --quiet && git diff --staged --quiet || git commit -m "Manage: Updated Inventory"
+          git push
