@@ -3,7 +3,6 @@ import json
 import random
 import os
 
-# --- DATABASE MODULE ---
 class MemoryCore:
     def __init__(self):
         self.db_path = 'database.json'
@@ -16,36 +15,30 @@ class MemoryCore:
         except FileNotFoundError:
             return {
                 "business_status": "Active",
-                "wallet": {"total_profit": 0, "reinvested": 0, "family_fund": 0},
+                "wallet": {"total_profit": 0, "reinvested": 0, "family_fund": 0, "currency": "USD"},
                 "inventory": [],
                 "logs": []
             }
 
     def save_memory(self, items):
-        # Saves MULTIPLE items at once
         for item in items:
             self.data['inventory'].append(item)
-        
         with open(self.db_path, 'w') as f:
             json.dump(self.data, f, indent=4)
-        
-        print(f"--> [MEMORY] Saved {len(items)} new items. Total: {len(self.data['inventory'])}")
+        print(f"--> [MEMORY] Saved {len(items)} new items. Total: {len(self.data['inventory'])}.")
 
-# --- PLATFORM MANAGER ---
 class PlatformManager:
     def __init__(self):
         self.identity = "Jaredsb1000-Family-Protector"
 
-        def list_product(self, item):
-        print(f"--> [UPLOADING] '{item['title']}' to Shopify...")
+    def list_product(self, item):
+        # Fixed: Changed 'title' to 'name'
+        print(f"--> [UPLOADING] '{item['name']}' to Shopify...")
 
-# --- TREND HUNTER (LIVE CONNECTION) ---
 class TrendHunter:
     def scan_market(self):
         print("Connecting to Live Product Feed (DummyJSON)...")
-        
         try:
-            # Fetches 5 real products from the internet
             response = requests.get('https://dummyjson.com/products?limit=5')
             if response.status_code == 200:
                 data = response.json()
@@ -54,20 +47,19 @@ class TrendHunter:
                 formatted_products = []
                 for p in products:
                     formatted_products.append({
-                        "name": p['title'],
+                        "name": p['title'], 
                         "price": p['price'],
                         "status": "Volume",
                         "description": p['description']
                     })
                 return formatted_products
             else:
-                print("Connection Failed. Using backup.")
+                print("Connection Failed.")
                 return []
         except Exception as e:
             print(f"Error: {e}")
             return []
 
-# --- MAIN MANAGE AI ---
 class Manage:
     def __init__(self):
         self.mode = "Family First"
@@ -97,7 +89,7 @@ class Manage:
         self.memory.save_memory(items)
         
         print("-" * 40)
-        print(f"STATUS: Complete. Inventory Updated.")
+        print("STATUS: Complete. Inventory Updated.")
 
 if __name__ == "__main__":
     ai = Manage()
