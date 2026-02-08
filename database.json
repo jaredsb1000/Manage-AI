@@ -1,19 +1,25 @@
 {
-  "business_status": "Active",
-  "wallet": {
-    "total_profit": 0,
-    "reinvested": 0,
-    "family_fund": 0,
-    "currency": "USD"
-  },
-  "inventory": [],
-  "family_protocols": {
-    "vacation_mode": false,
-    "time_guard": true
-  },
-  "nexus_link": {
-    "status": "Disconnected",
-    "last_sync": "Never"
-  },
-  "logs": []
+    "business_status": "Active",
+    "wallet": {
+        "total_profit": 0,
+        "reinvested": 0,
+        "family_fund": 0,
+        "currency": "USD"
+    },
+    "inventory": [
+        {
+            "name": "Quantum Headphones",
+            "price": 299.0,
+            "status": "Rare"
+        }
+    ],
+    "family_protocols": {
+        "vacation_mode": false,
+        "time_guard": true
+    },
+    "nexus_link": {
+        "status": "Disconnected",
+        "last_sync": "Never"
+    },
+    "logs": []
 }
