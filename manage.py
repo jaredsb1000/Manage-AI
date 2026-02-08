@@ -36,7 +36,7 @@ class PlatformManager:
     def __init__(self):
         self.identity = "Jaredsb1000-Family-Protector"
 
-    def list_product(self, item):
+        def list_product(self, item):
         print(f"--> [UPLOADING] '{item['title']}' to Shopify...")
 
 # --- TREND HUNTER (LIVE CONNECTION) ---
