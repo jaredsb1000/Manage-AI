@@ -1,0 +1,56 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage - Premium Selections</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
+        .header { background: #333; color: #fff; padding: 20px; text-align: center; }
+        .container { max-width: 800px; margin: 30px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        .product { border-bottom: 1px solid #ddd; padding: 20px 0; }
+        h1, h2 { color: #333; }
+        .price { color: green; font-weight: bold; }
+        .tag { background: #007bff; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; }
+    </style>
+</head>
+<body>
+<div class="header">
+    <h1>Manage Storefront</h1>
+    <p>AI-Curated Selections | Family Owned & Operated</p>
+</div>
+<div class="container" id="store-container">
+    <h2>Loading AI Selections...</h2>
+    <p>Please wait while Manage connects to the database...</p>
+</div>
+<script>
+    fetch('database.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('store-container');
+            if (data.inventory.length === 0) {
+                container.innerHTML = '<h2>No items found. Manage is hunting for products...</h2>';
+                return;
+            }
+            let html = '<h2>Featured Selections</h2>';
+            data.inventory.forEach(item => {
+                html += `
+                    <div class="product">
+                        <h3>${item.name}</h3>
+                        <p>Status: <span class="tag">${item.status}</span></p>
+                        <p>Price: <span class="price">$${item.price}</span></p>
+                        <button onclick="alert('Added to Cart')">Add to Cart</button>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('Error loading database:', error);
+            document.getElementById('store-container').innerHTML = '<p>Error loading products. Please try again later.</p>';
+        });
+</script>
+</body>
+</html>
+```
