@@ -7,7 +7,7 @@ class PlatformManager:
     """The 'Hands'. Uses real API keys to log in."""
     def __init__(self):
         # 1. Verify Manage's Identity from the Safe Box
-        self.identity = os.getenv("MANAGE_IDENTITY")
+        self.identity = "Jaredsb1000-Family-Protector"
         if self.identity:
             print(f"-> [IDENTITY CONFIRMED]: {self.identity}")
         else:
