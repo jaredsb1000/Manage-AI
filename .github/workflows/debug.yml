@@ -1,0 +1,14 @@
+name: Debug Secrets
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run_debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Run Debug Script
+        run: python debug_secrets.py
