@@ -41,6 +41,36 @@
             "price": 8.99,
             "status": "Volume",
             "description": "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home."
+        },
+        {
+            "name": "Essence Mascara Lash Princess",
+            "price": 9.99,
+            "status": "Volume",
+            "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula."
+        },
+        {
+            "name": "Eyeshadow Palette with Mirror",
+            "price": 19.99,
+            "status": "Volume",
+            "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application."
+        },
+        {
+            "name": "Powder Canister",
+            "price": 14.99,
+            "status": "Volume",
+            "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish."
+        },
+        {
+            "name": "Red Lipstick",
+            "price": 12.99,
+            "status": "Volume",
+            "description": "The Red Lipstick is a classic and bold choice for adding a pop of color to your lips. With a creamy and pigmented formula, it provides a vibrant and long-lasting finish."
+        },
+        {
+            "name": "Red Nail Polish",
+            "price": 8.99,
+            "status": "Volume",
+            "description": "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home."
         }
     ],
     "family_protocols": {
