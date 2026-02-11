@@ -6,7 +6,21 @@
         "family_fund": 0,
         "currency": "USD"
     },
-    "inventory": [],
+    "inventory": [
+        {
+            "name": "Sourcing Set: Speedy Crimson Hero [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Speedy Crimson Hero art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SpeedyCrimsonHero #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Speedy Crimson Hero\" piece. \ud83c\udfa8\nOnly 5.00 for the receipt + link.\n\nClick the link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SpeedyCrimsonHero"
+            },
+            "status": "Virtual"
+        }
+    ],
     "family_protocols": {
         "vacation_mode": false,
         "time_guard": true
