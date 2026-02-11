@@ -1,3 +1,5 @@
 {
-  "transactions": []
+    "total_profit": 0,
+    "reinvested": 0,
+    "family_fund": 0
 }
