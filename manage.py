@@ -30,21 +30,53 @@ class SpoofLibrary:
         ]
         return random.choice(characters)
 
-# --- ART GENERATOR ---
+# --- INTEGRATED ART MANAGER ---
 class ArtGenerator:
     def create_spoof_art(self, character_name, rarity):
+        import os
+        import requests
+        
+        # 1. Define the Style
         style_modifier = ""
         if rarity == "ULTRA_RARE": style_modifier = "Golden Glow, God Rays, Masterpiece"
         elif rarity == "EPIC": style_modifier = "Cyberpunk Neon Glow, Heavy Metal, 4K Detail"
         else: style_modifier = "Trippy Psychedelic, Vibrant Colors"
         
+        # 2. Create the Prompt
         prompt = f"{style_modifier} digital art of {character_name}, highly detailed, vibrant colors"
         seed = random.randint(1, 999999)
         
-        # FIX: Replace spaces with dashes so the image URL works
+        # 3. Generate URL
         safe_prompt = prompt.replace(" ", "-")
-        return f"https://pollinations.ai/p/{safe_prompt}?width=600&height=400&seed={seed}&nologo=true"
-
+        remote_url = f"https://pollinations.ai/p/{safe_prompt}?width=600&height=400&seed={seed}&nologo=true"
+        
+        # 4. Download and Save Locally
+        print("-> [ART] Generating & Securing Image...")
+        try:
+            response = requests.get(remote_url, timeout=10)
+            if response.status_code == 200:
+                # Make sure the 'images' folder exists
+                if not os.path.exists('images'):
+                    os.makedirs('images')
+                
+                # Save the image as a JPG file in your repository
+                filename = f"images/{seed}.jpg"
+                with open(filename, 'wb') as f:
+                    f.write(response.content)
+                
+                print(f"-> [ART] Image secured locally: {filename}")
+                
+                # Return the LOCAL path (./images/seed.jpg)
+                # This ensures GitHub Pages serves the image, not Pollinations
+                return f"./{filename}"
+            else:
+                # Fallback if API fails
+                print("-> [ART ERROR] API failed. Using fallback URL.")
+                return remote_url
+        except Exception as e:
+            print(f"-> [ART ERROR] Download failed. {e}")
+            return remote_url
+            
 # --- PRINTFUL MANAGER ---
 class PrintfulManager:
     def __init__(self):
