@@ -48,6 +48,20 @@
             },
             "status": "Virtual",
             "art_url": "https://pollinations.ai/p/Cyberpunk-Neon-Glow,-Heavy-Metal,-4K-Detail-digital-art-of-Fat-Cat,-highly-detailed,-vibrant-colors?width=600&height=400&seed=974529&nologo=true"
+        },
+        {
+            "name": "Sourcing Set: Road Runner [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Road Runner art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #RoadRunner #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Road Runner\" piece. \ud83c\udfa8\nOnly 5.00 for the receipt + link.\n\nClick the link to view/buy! \ud83d\udc47\n#familyvault #digitalart #RoadRunner"
+            },
+            "status": "Virtual",
+            "art_url": "./images/407466.jpg"
         }
     ],
     "family_protocols": {
