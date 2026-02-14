@@ -1,56 +1,150 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage - Premium Selections</title>
+    <title>Manage - AI | Live Inventory</title>
     <style>
-        body { font-family: sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
-        .header { background: #333; color: #fff; padding: 20px; text-align: center; }
-        .container { max-width: 800px; margin: 30px auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        .product { border-bottom: 1px solid #ddd; padding: 20px 0; }
-        h1, h2 { color: #333; }
-        .price { color: green; font-weight: bold; }
-        .tag { background: #007bff; color: white; padding: 2px 6px; border-radius: 4px; font-size: 0.8em; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #30363d;
+        }
+        h1 { margin: 0; color: #58a6ff; }
+        p.subtitle { color: #8b949e; margin-top: 10px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+            border-color: #58a6ff;
+        }
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #21262d;
+        }
+        .card-body { padding: 16px; }
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+            color: #ffffff;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .card-meta {
+            font-size: 0.85rem;
+            color: #8b949e;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #3fb950;
+            display: block;
+            margin-top: 10px;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .NORMAL { background-color: #1f6feb; color: white; }
+        .EPIC { background-color: #8957e5; color: white; }
+        .ULTRA_RARE { 
+            background-color: #d2a8ff; 
+            color: #000; 
+            border: 1px solid #fff;
+            box-shadow: 0 0 8px #d2a8ff;
+        }
+        .loading { text-align: center; margin-top: 50px; color: #8b949e; }
     </style>
 </head>
 <body>
-<div class="header">
-    <h1>Manage Storefront</h1>
-    <p>AI-Curated Selections | Family Owned & Operated</p>
-</div>
-<div class="container" id="store-container">
-    <h2>Loading AI Selections...</h2>
-    <p>Please wait while Manage connects to the database...</p>
-</div>
-<script>
-    fetch('database.json')
-        .then(response => response.json())
-        .then(data => {
-            const container = document.getElementById('store-container');
-            if (data.inventory.length === 0) {
-                container.innerHTML = '<h2>No items found. Manage is hunting for products...</h2>';
-                return;
-            }
-            let html = '<h2>Featured Selections</h2>';
-            data.inventory.forEach(item => {
-                html += `
-                    <div class="product">
-                        <h3>${item.name}</h3>
-                        <p>Status: <span class="tag">${item.status}</span></p>
-                        <p>Price: <span class="price">$${item.price}</span></p>
-                        <button onclick="alert('Added to Cart')">Add to Cart</button>
+
+    <div class="header">
+        <h1>Manage - AI Business Manager</h1>
+        <p class="subtitle">Live Autonomous Sourcing & Inventory</p>
+    </div>
+
+    <div id="app" class="grid">
+        <div class="loading">Connecting to Manage AI Core...</div>
+    </div>
+
+    <script>
+        async function init() {
+            const app = document.getElementById('app');
+            try {
+                const response = await fetch('database.json?nocache=' + new Date().getTime());
+                if (!response.ok) throw new Error("Failed to load database");
+                const data = await response.json();
+
+                if (!data.inventory || data.inventory.length === 0) {
+                    app.innerHTML = '<div class="loading">Inventory is currently empty. Waiting for the next sourcing cycle...</div>';
+                    return;
+                }
+
+                app.innerHTML = '';
+                [...data.inventory].reverse().forEach(item => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    const img = item.art_url || 'https://via.placeholder.com/400x200?text=No+Image';
+                    card.innerHTML = `
+                        <img src="${img}" class="card-img" alt="${item.name}" loading="lazy">
+                        <div class="card-body">
+                            <div class="card-title" title="${item.name}">${item.name}</div>
+                            <span class="badge ${item.rarity}">${item.rarity}</span>
+                            <div class="card-meta">
+                                <span>Trend: ${item.market_trend || 'N/A'}</span>
+                                <span>Profit: $${item.profit}</span>
+                            </div>
+                            <span class="price">$${item.price}.00</span>
+                        </div>
+                    `;
+                    app.appendChild(card);
+                });
+
+            } catch (error) {
+                console.error(error);
+                app.innerHTML = `
+                    <div style="text-align:center; color: #f85149;">
+                        <h3>System Offline</h3>
+                        <p>Could not connect to Manage AI database.</p>
                     </div>
                 `;
-            });
-            container.innerHTML = html;
-        })
-        .catch(error => {
-            console.error('Error loading database:', error);
-            document.getElementById('store-container').innerHTML = '<p>Error loading products. Please try again later.</p>';
-        });
-</script>
+            }
+        }
+        init();
+        setInterval(init, 60000);
+    </script>
 </body>
 </html>
-```
