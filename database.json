@@ -244,6 +244,28 @@
             "product_type": "Unisex Heavy Blend Hoodie",
             "edition": "1 of 100,000 (Limited)",
             "product_desc": "Comfortable, classic fit hoodie."
+        },
+        {
+            "name": "Johnny Bravo",
+            "rarity": "EPIC",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "STABLE",
+            "art_url": "images/307120.jpg",
+            "stats": {
+                "str": 60,
+                "int": 66,
+                "dex": 100
+            },
+            "skills": [
+                "Engineering",
+                "Stealth",
+                "Strength",
+                "Sorcery"
+            ],
+            "product_type": "Unisex Heavy Blend Hoodie",
+            "edition": "1 of 100,000 (Limited)",
+            "product_desc": "Comfortable, classic fit hoodie."
         }
     ],
     "family_protocols": {
