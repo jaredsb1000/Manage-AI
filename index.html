@@ -619,15 +619,17 @@
                         <div class="product-type-badge">${productType}</div>
                     </div>
                     
-                    <div class="card-body">
+                                        <div class="card-body">
                         <div class="card-title">${item.name}</div>
+                        <!-- NEW DISCLAIMER BADGE -->
+                        <div class="disclaimer-badge">Parody / Fan Art</div>
+                        
                         <span class="edition-text">${editionText}</span>
                         <div class="card-meta">
                             <span style="font-size:0.7rem; color:#888;">${item.rarity}</span>
                             <span class="price">$${item.price}</span>
                         </div>
                     </div>
-                </div>
             `}).join('');
         }
 
