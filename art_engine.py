@@ -1,62 +1,67 @@
 import os
-from openai import OpenAI
+import requests
+import random
 
 class HyperRenderer:
     """
-    The Manage AI - HyperRenderer Engine.
-    Integrates DALL-E 3 (HD) for commercial-grade art.
+    FREE VERSION: Uses Pollinations.ai to generate images.
+    No API Key required. Unlimited usage.
     """
     
     def __init__(self):
-        # Looks for the 'OPENAI_API_KEY' in GitHub Secrets
-        self.client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+        # No API Key needed for this version
+        pass
         
     def enhance_prompt(self, subject, rarity):
         """Injects professional keywords based on rarity."""
         
-        # Base keywords for quality
-        base_quality = "8k resolution, photorealistic, cinematic lighting, volumetric fog, octane render, unreal engine 5, highly detailed texture, masterpiece, sharp focus, no text, no watermarks"
-        
-        # Style modifiers
         if rarity == "ULTRA_RARE":
-            style = "Golden Aura, Divine Light, Ethereal, Intricate Jewelry"
+            style = "Golden Aura, Divine Light, Ethereal, Intricate Jewelry, 8k, masterpiece"
         elif rarity == "EPIC":
-            style = "Cyberpunk Neon Glow, Heavy Metal, Chrome, Futuristic"
+            style = "Cyberpunk Neon Glow, Heavy Metal, Chrome, Futuristic, 4k, detailed"
         else:
-            style = "Trippy Psychedelic, Vibrant Colors, Pop Art Style"
+            style = "Vibrant Colors, Pop Art Style, high quality, detailed"
             
-        return f"A breathtaking, high-definition capture of {subject}. {style}. {base_quality}."
+        return f"{style} digital art of {subject}. No text."
 
     def generate_masterpiece(self, subject, filename, rarity):
-        """Generates the image and returns the local file path."""
-        print(f"-> [RENDER] Initializing HyperRenderer for: {subject}")
+        """Generates the image using the free Pollinations API and returns the local file path."""
+        print(f"-> [RENDER] Initializing Free Renderer for: {subject}")
         
         prompt = self.enhance_prompt(subject, rarity)
         
+        # Prepare the URL for Pollinations.ai
+        # We use a random seed to ensure we don't get the exact same image twice
+        seed = random.randint(1, 999999999)
+        
+        # URL encode the prompt (replace spaces with %20)
+        safe_prompt = prompt.replace(" ", "%20")
+        
+        # Construct the API URL
+        # Using the 'flux' or 'turbo' model gives better results
+        api_url = f"https://pollinations.ai/p/{safe_prompt}?width=1024&height=1024&seed={seed}&nologo=true&model=flux"
+        
         try:
-            response = self.client.images.generate(
-                model="dall-e-3",
-                prompt=prompt,
-                size="1024x1024",
-                quality="hd", # CRITICAL: Uses HD mode
-                n=1,
-                response_format="b64_json"
-            )
+            print(f"-> [RENDER] Downloading from Free API...")
+            response = requests.get(api_url, timeout=30)
             
-            image_data = response.data[0].b64_json
-            
-            # Ensure directory exists
-            os.makedirs("images", exist_ok=True)
-            
-            # Save file
-            filepath = f"images/{filename}"
-            with open(filepath, "wb") as f:
-                f.write(image_data)
+            if response.status_code == 200:
+                image_data = response.content
                 
-            print(f"-> [SUCCESS] Masterpiece saved: {filepath}")
-            return filepath
+                # Ensure directory exists
+                os.makedirs("images", exist_ok=True)
+                
+                # Save file
+                filepath = f"images/{filename}"
+                with open(filepath, "wb") as f:
+                    f.write(image_data)
+                    
+                print(f"-> [SUCCESS] Free Art saved: {filepath}")
+                return filepath
+            else:
+                print(f"-> [ERROR] API returned status {response.status_code}")
+                return None
 
         except Exception as e:
             print(f"-> [ERROR] Rendering failed: {e}")
-            # Fallback placeholder if API fails
-            return "https://placehold.co/600x400/161b22/58a6ff?text=Render+Failed"
+            return None
