@@ -1,150 +1,401 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage - AI | Live Inventory</title>
+    <title>Manage AI | Neural Sourcing Terminal</title>
     <style>
+        /* --- CORE VARIABLES --- */
+        :root {
+            --bg-deep: #050505;
+            --bg-panel: #0a0a0a;
+            --bg-card: #111111;
+            --neon-blue: #00f3ff;
+            --neon-pink: #ff00ff;
+            --neon-green: #00ff41;
+            --text-main: #e0e0e0;
+            --text-dim: #666;
+            --border: #333;
+            --font-mono: 'Courier New', Courier, monospace;
+            --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        /* --- RESET & BASE --- */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
+            background-color: var(--bg-deep);
+            color: var(--text-main);
+            font-family: var(--font-ui);
             margin: 0;
-            padding: 20px;
+            overflow-x: hidden;
         }
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #30363d;
+
+        /* 25. CRT SCANLINE OVERLAY */
+        .scanlines {
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            z-index: 9999;
         }
-        h1 { margin: 0; color: #58a6ff; }
-        p.subtitle { color: #8b949e; margin-top: 10px; }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 24px;
-            max-width: 1200px;
-            margin: 0 auto;
+
+        /* 1. PARTICLE BACKGROUND CANVAS */
+        #particle-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1; opacity: 0.3;
         }
+
+        /* --- COMMAND LINE HEADER (21) --- */
+        .cmd-header {
+            background: #000; color: var(--neon-green);
+            font-family: var(--font-mono); font-size: 0.75rem;
+            padding: 5px 20px; border-bottom: 1px solid var(--border);
+            display: flex; justify-content: space-between;
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 20px; background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
+            position: sticky; top: 0; z-index: 100;
+        }
+        .brand {
+            font-family: var(--font-mono); font-size: 1.5rem;
+            color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue);
+            font-weight: 900; letter-spacing: -1px; cursor: pointer;
+            position: relative;
+        }
+        /* 3. GLITCH EFFECT */
+        .brand:hover { animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite; }
+        @keyframes glitch {
+            0% { transform: translate(0) }
+            20% { transform: translate(-2px, 2px) }
+            40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) }
+            80% { transform: translate(2px, -2px) }
+            100% { transform: translate(0) }
+        }
+
+        .nav-controls { display: flex; gap: 10px; align-items: center; }
+        
+        /* 5. SEARCH BAR */
+        .search-box {
+            background: #111; border: 1px solid var(--border);
+            color: #fff; padding: 8px 12px;
+            font-family: var(--font-mono); font-size: 0.8rem;
+            width: 200px; transition: 0.3s;
+        }
+        .search-box:focus { border-color: var(--neon-blue); outline: none; width: 250px; }
+
+        .nav-btn {
+            background: transparent; border: 1px solid var(--neon-blue);
+            color: var(--neon-blue); padding: 8px 16px;
+            font-family: var(--font-mono); cursor: pointer; transition: 0.3s;
+            text-transform: uppercase; font-size: 0.8rem; position: relative; overflow: hidden;
+        }
+        .nav-btn:hover { background: var(--neon-blue); color: #000; }
+        /* 15. RIPPLE EFFECT */
+        .ripple { position: absolute; background: rgba(255,255,255,0.3); border-radius: 50%; transform: scale(0); animation: ripple-anim 0.6s linear; pointer-events: none; }
+        @keyframes ripple-anim { to { transform: scale(4); opacity: 0; } }
+
+        /* 22. MOBILE MENU TOGGLE */
+        .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
+        @media(max-width: 768px) {
+            .nav-controls { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #000; padding: 20px; border-bottom: 1px solid var(--border); }
+            .nav-controls.active { display: flex; }
+            .menu-toggle { display: block; }
+        }
+
+        /* 18. BREADCRUMBS */
+        .breadcrumbs {
+            padding: 10px 20px; font-size: 0.8rem; color: var(--text-dim);
+            font-family: var(--font-mono); border-bottom: 1px solid #222;
+        }
+
+        /* 8. ONLINE COUNTER & 16. COUNTDOWN */
+        .status-bar {
+            display: flex; justify-content: space-between; padding: 0 20px;
+            font-family: var(--font-mono); font-size: 0.7rem; color: var(--neon-green);
+            margin-bottom: 10px;
+        }
+
+        /* --- REELS --- */
+        .reels-container {
+            display: flex; overflow-x: auto; gap: 20px; padding: 40px 20px;
+            scroll-behavior: smooth;
+        }
+        .reels-container::-webkit-scrollbar { height: 8px; }
+        .reels-container::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 4px; }
+        .reel-card {
+            flex: 0 0 250px; height: 350px;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 4px; position: relative; cursor: pointer;
+            overflow: hidden; transition: 0.3s;
+            /* 2. 3D TILT BASE */
+            transform-style: preserve-3d; perspective: 1000px;
+        }
+        .reel-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+
+        /* --- SHOP GRID --- */
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .section-header {
+            font-family: var(--font-mono); color: var(--neon-green);
+            margin-bottom: 20px; border-bottom: 1px solid var(--neon-green);
+            padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center;
+        }
+        
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+        
         .card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 6px;
-            overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: var(--bg-card); border: 1px solid var(--border);
+            border-radius: 8px; overflow: hidden; position: relative; cursor: pointer;
+            transition: transform 0.1s; /* Faster for JS tilt */
+            transform-style: preserve-3d;
         }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
-            border-color: #58a6ff;
+        .card:hover { z-index: 10; }
+        
+        /* RARITY GLOWS */
+        .card[data-rarity="ULTRA_RARE"] { border: 1px solid var(--neon-pink); box-shadow: 0 0 10px rgba(255, 0, 255, 0.2); }
+        .card[data-rarity="EPIC"] { border: 1px solid var(--neon-blue); box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
+
+        .card-img-container { position: relative; overflow: hidden; height: 220px; }
+        .card-img { width: 100%; height: 100%; object-fit: cover; }
+        
+        /* 25. MINT PROGRESS BAR */
+        .mint-progress {
+            position: absolute; bottom: 0; left: 0; height: 3px; background: var(--neon-green);
+            width: 0%; transition: width 0.5s;
         }
-        .card-img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background-color: #21262d;
+
+        .card-body { padding: 20px; background: var(--bg-card); position: relative; z-index: 2; }
+        .card-title { font-family: var(--font-mono); font-size: 1rem; margin: 0 0 10px 0; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .card-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; }
+        .price { color: var(--neon-green); font-family: var(--font-mono); font-weight: bold; }
+
+        /* 12. LOADING SKELETON */
+        .skeleton {
+            background: linear-gradient(90deg, #111 25%, #222 50%, #111 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
         }
-        .card-body { padding: 16px; }
-        .card-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin: 0 0 8px 0;
-            color: #ffffff;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+        @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+
+        /* --- MODAL --- */
+        .modal {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); z-index: 1000;
+            justify-content: center; align-items: center; padding: 20px;
         }
-        .card-meta {
-            font-size: 0.85rem;
-            color: #8b949e;
-            margin-bottom: 12px;
-            display: flex;
-            justify-content: space-between;
+        .modal-content {
+            width: 100%; max-width: 1100px; height: 90vh;
+            background: var(--bg-panel); border: 1px solid var(--border);
+            display: grid; grid-template-columns: 1.2fr 0.8fr;
+            overflow: hidden; box-shadow: 0 0 50px rgba(0,0,0,0.8);
         }
-        .price {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #3fb950;
-            display: block;
-            margin-top: 10px;
+        .modal-left {
+            background: #000; position: relative; display: flex;
+            align-items: center; justify-content: center; overflow: hidden;
         }
-        .badge {
-            display: inline-block;
-            padding: 2px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        /* 20. IMAGE ZOOM/PAN */
+        .modal-img {
+            max-width: 100%; max-height: 100%; object-fit: contain;
+            cursor: grab; transition: transform 0.1s;
         }
-        .NORMAL { background-color: #1f6feb; color: white; }
-        .EPIC { background-color: #8957e5; color: white; }
-        .ULTRA_RARE { 
-            background-color: #d2a8ff; 
-            color: #000; 
-            border: 1px solid #fff;
-            box-shadow: 0 0 8px #d2a8ff;
+        .modal-img:active { cursor: grabbing; }
+        
+        .burn-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle, rgba(255,100,0,0.8) 0%, rgba(255,0,0,0) 70%);
+            opacity: 0; pointer-events: none; transition: opacity 0.5s;
+            mix-blend-mode: color-dodge; z-index: 5;
         }
-        .loading { text-align: center; margin-top: 50px; color: #8b949e; }
+        .burn-active { animation: burnPulse 0.1s infinite; opacity: 1; }
+        @keyframes burnPulse { 0% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.05); filter: brightness(1.5) contrast(1.2); } 100% { transform: scale(1); filter: brightness(1); } }
+
+        .modal-right { padding: 30px; overflow-y: auto; display: flex; flex-direction: column; border-left: 1px solid var(--border); }
+        
+        .close-modal {
+            position: absolute; top: 20px; right: 20px;
+            background: rgba(0,0,0,0.5); border: 1px solid #fff; color: #fff;
+            width: 30px; height: 30px; border-radius: 50%; cursor: pointer; z-index: 20;
+            display: flex; align-items: center; justify-content: center; font-weight: bold;
+        }
+
+        /* 7. SPARKLINE GRAPH */
+        .sparkline { width: 100px; height: 30px; stroke: var(--neon-green); fill: none; stroke-width: 2; }
+
+        /* 6. LORE GENERATOR */
+        .lore-box {
+            background: #000; border-left: 2px solid var(--neon-blue);
+            padding: 10px; font-family: var(--font-mono); font-size: 0.8rem;
+            color: #aaa; margin: 10px 0; line-height: 1.4; min-height: 60px;
+        }
+
+        /* 14. SOUND WAVE */
+        .sound-wave { display: flex; gap: 2px; align-items: flex-end; height: 15px; }
+        .bar { width: 3px; background: var(--neon-blue); animation: wave 1s infinite ease-in-out; }
+        .bar:nth-child(2) { animation-delay: 0.1s; } .bar:nth-child(3) { animation-delay: 0.2s; }
+        @keyframes wave { 0%, 100% { height: 2px; } 50% { height: 15px; } }
+
+        /* CHAT */
+        .terminal-chat {
+            background: #000; border: 1px solid var(--border); padding: 15px;
+            font-family: var(--font-mono); font-size: 0.8rem; height: 200px;
+            overflow-y: auto; margin-top: auto; display: flex; flex-direction: column;
+        }
+        .chat-input-area { display: flex; margin-top: 10px; }
+        .chat-input {
+            flex: 1; background: #111; border: 1px solid #333; color: #fff;
+            padding: 8px; font-family: var(--font-mono);
+        }
+        .chat-send {
+            background: var(--neon-blue); border: none; color: #000;
+            padding: 0 15px; cursor: pointer; font-weight: bold;
+        }
+
+        /* 19. BACK TO TOP */
+        .back-to-top {
+            position: fixed; bottom: 20px; right: 20px;
+            background: var(--neon-blue); color: #000; width: 40px; height: 40px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; opacity: 0; transition: 0.3s; pointer-events: none;
+            font-weight: bold; z-index: 90;
+        }
+        .back-to-top.visible { opacity: 1; pointer-events: all; }
+
+        /* 23. FPS COUNTER */
+        .fps-counter {
+            position: fixed; bottom: 10px; left: 10px; font-family: var(--font-mono);
+            font-size: 0.7rem; color: #333; pointer-events: none;
+        }
+
+        /* 17. SKILL TOOLTIP */
+        .skill-tag {
+            background: #21262d; border: 1px solid #30363d; padding: 4px 8px;
+            border-radius: 4px; font-size: 0.75rem; position: relative; cursor: help;
+        }
+        .skill-tag:hover::after {
+            content: attr(data-desc);
+            position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
+            background: #333; color: #fff; padding: 5px 10px; font-size: 0.7rem;
+            white-space: nowrap; border-radius: 4px; pointer-events: none;
+            margin-bottom: 5px; z-index: 10;
+        }
+
+        .hidden { display: none !important; }
+        .btn-action {
+            background: var(--neon-blue); border: none; color: #000; padding: 10px;
+            font-weight: bold; cursor: pointer; margin-top: 10px; text-transform: uppercase; font-size: 0.8rem;
+        }
+
+        @media(max-width: 900px) {
+            .modal-content { grid-template-columns: 1fr; height: 95vh; overflow-y: auto; }
+            .modal-left { height: 300px; }
+        }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Manage - AI Business Manager</h1>
-        <p class="subtitle">Live Autonomous Sourcing & Inventory</p>
+    <!-- 1. CANVAS PARTICLES -->
+    <canvas id="particle-canvas"></canvas>
+    <!-- 25. SCANLINES -->
+    <div class="scanlines"></div>
+    <!-- 23. FPS -->
+    <div class="fps-counter" id="fps">60 FPS</div>
+    <!-- 19. BACK TO TOP -->
+    <div class="back-to-top" onclick="window.scrollTo(0,0)">^</div>
+
+    <!-- 21. COMMAND HEADER -->
+    <div class="cmd-header">
+        <span id="cmd-text">> INITIALIZING NEURAL INTERFACE...</span>
+        <span>V.17.0.4</span>
     </div>
 
-    <div id="app" class="grid">
-        <div class="loading">Connecting to Manage AI Core...</div>
+    <!-- NAV -->
+    <nav>
+        <div class="brand" onclick="showHome()">MANAGE_AI</div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        <div class="nav-controls" id="nav-controls">
+            <button class="nav-btn" onclick="showHome()">Reels</button>
+            <button class="nav-btn" onclick="showShop()">Sourcing</button>
+            <!-- 24. SURPRISE ME -->
+            <button class="nav-btn" onclick="randomItem()">Surprise Me</button>
+            <!-- 5. SEARCH -->
+            <input type="text" class="search-box" placeholder="FIND ASSET..." onkeyup="filterGrid(this.value)">
+            <!-- 9. SORT -->
+            <select class="search-box" style="width:auto;" onchange="sortGrid(this.value)">
+                <option value="newest">Newest</option>
+                <option value="price_low">Price: Low</option>
+                <option value="price_high">Price: High</option>
+                <option value="rarity">Rarity</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- 18. BREADCRUMBS -->
+    <div class="breadcrumbs" id="breadcrumbs">HOME</div>
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+        <span>🟢 SYSTEM ONLINE</span>
+        <span>USERS ONLINE: <span id="online-count">842</span></span>
+        <span>⏱ NEXT MINT: <span id="mint-timer">04:59:12</span></span>
     </div>
 
-    <script>
-        async function init() {
-            const app = document.getElementById('app');
-            try {
-                const response = await fetch('database.json?nocache=' + new Date().getTime());
-                if (!response.ok) throw new Error("Failed to load database");
-                const data = await response.json();
+    <!-- VIEWS -->
+    <div id="view-home" class="view">
+        <div class="container">
+            <div class="section-header">
+                <span>// TOP TIER ACQUISITIONS</span>
+                <span style="font-size:0.7rem; color:var(--neon-pink);">LIVE FEED</span>
+            </div>
+            <div id="reels-container" class="reels-container">
+                <!-- JS loads here -->
+            </div>
+        </div>
+    </div>
 
-                if (!data.inventory || data.inventory.length === 0) {
-                    app.innerHTML = '<div class="loading">Inventory is currently empty. Waiting for the next sourcing cycle...</div>';
-                    return;
-                }
+    <div id="view-shop" class="view hidden">
+        <div class="container">
+            <div class="section-header">
+                <span>// FULL INVENTORY DATABASE</span>
+                <span id="item-count">LOADING...</span>
+            </div>
+            <div id="shop-grid" class="grid">
+                <!-- JS loads here -->
+            </div>
+        </div>
+    </div>
 
-                app.innerHTML = '';
-                [...data.inventory].reverse().forEach(item => {
-                    const card = document.createElement('div');
-                    card.className = 'card';
-                    const img = item.art_url || 'https://via.placeholder.com/400x200?text=No+Image';
-                    card.innerHTML = `
-                        <img src="${img}" class="card-img" alt="${item.name}" loading="lazy">
-                        <div class="card-body">
-                            <div class="card-title" title="${item.name}">${item.name}</div>
-                            <span class="badge ${item.rarity}">${item.rarity}</span>
-                            <div class="card-meta">
-                                <span>Trend: ${item.market_trend || 'N/A'}</span>
-                                <span>Profit: $${item.profit}</span>
-                            </div>
-                            <span class="price">$${item.price}.00</span>
-                        </div>
-                    `;
-                    app.appendChild(card);
-                });
+    <!-- MODAL -->
+    <div id="product-modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal" onclick="closeModalDirect()">×</button>
+            
+            <div class="modal-left">
+                <div id="burn-effect" class="burn-overlay"></div>
+                <!-- 20. ZOOM ENABLED IMAGE -->
+                <img id="modal-img" src="" class="modal-img" onmousedown="startZoom(event)">
+            </div>
+            
+            <div class="modal-right">
+                <div style="display:flex; justify-content:space-between; align-items:start;">
+                    <h2 id="modal-title" style="color:var(--neon-blue); font-family:var(--font-mono); margin:0; width:70%;">ASSET NAME</h2>
+                    <!-- 7. SPARKLINE -->
+                    <svg class="sparkline" viewBox="0 0 100 30">
+                        <path id="sparkline-path" d="M0,15 Q50,0 100,15" stroke="#00ff41" fill="none" stroke-width="2"/>
+                    </svg>
+                </div>
+                
+                <div style="display:flex; gap:10px; margin-bottom:15px;">
+                    <span id="modal-rarity" style="background:#333; padding:2px 8px; font-size:0.7rem; color:#fff;"></span>
+                    <span id="modal-price" style="color:var(--neon-green); font-family:var(--font-mono); font-weight:bold; margin-left:auto; font-size:1.2rem;"></span>
+                </div>
 
-            } catch (error) {
-                console.error(error);
-                app.innerHTML = `
-                    <div style="text-align:center; color: #f85149;">
-                        <h3>System Offline</h3>
-                        <p>Could not connect to Manage AI database.</p>
-                    </div>
-                `;
-            }
-        }
-        init();
-        setInterval(init, 60000);
-    </script>
-</body>
-</html>
+                <!-- 6. LORE GENERATOR -->
+                <div id="lore-text" class="lore-box">Initializing backstory analysis...</div>
+                <button class="btn-action" onclick="generateLore()" style="width:100%; padding:5px;">GENERATE LORE</button>
+
+                <div style="margin:15px 0;">
+                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; colo
