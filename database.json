@@ -140,6 +140,24 @@
                 "Engineering",
                 "Combat"
             ]
+        },
+        {
+            "name": "Sector V Operatives",
+            "rarity": "NORMAL",
+            "price": 45,
+            "profit": 42.25,
+            "market_trend": "TRENDING",
+            "art_url": "images/719767.jpg",
+            "stats": {
+                "str": 50,
+                "int": 49,
+                "dex": 46
+            },
+            "skills": [
+                "Combat",
+                "Strength",
+                "Diplomacy"
+            ]
         }
     ],
     "family_protocols": {

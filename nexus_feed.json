@@ -66,5 +66,9 @@
     {
         "name": "Big Eared Mouse",
         "price": 45
+    },
+    {
+        "name": "Sector V Operatives",
+        "price": 45
     }
 ]
