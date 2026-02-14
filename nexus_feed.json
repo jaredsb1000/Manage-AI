@@ -62,5 +62,9 @@
     {
         "name": "Numbuh 4",
         "price": 45
+    },
+    {
+        "name": "Big Eared Mouse",
+        "price": 45
     }
 ]

@@ -122,6 +122,24 @@
                 "Firewall",
                 "Agility"
             ]
+        },
+        {
+            "name": "Big Eared Mouse",
+            "rarity": "NORMAL",
+            "price": 45,
+            "profit": 42.25,
+            "market_trend": "TRENDING",
+            "art_url": "https://placehold.co/600x400/161b22/58a6ff?text=Render+Failed",
+            "stats": {
+                "str": 45,
+                "int": 54,
+                "dex": 56
+            },
+            "skills": [
+                "Firewall",
+                "Engineering",
+                "Combat"
+            ]
         }
     ],
     "family_protocols": {
