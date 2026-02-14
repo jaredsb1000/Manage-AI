@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +29,7 @@
             overflow-x: hidden;
         }
 
-        /* 25. CRT SCANLINE OVERLAY */
+        /* CRT SCANLINE OVERLAY */
         .scanlines {
             position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
@@ -39,13 +38,13 @@
             z-index: 9999;
         }
 
-        /* 1. PARTICLE BACKGROUND CANVAS */
+        /* PARTICLE BACKGROUND CANVAS */
         #particle-canvas {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1; opacity: 0.3;
         }
 
-        /* --- COMMAND LINE HEADER (21) --- */
+        /* COMMAND LINE HEADER */
         .cmd-header {
             background: #000; color: var(--neon-green);
             font-family: var(--font-mono); font-size: 0.75rem;
@@ -66,20 +65,13 @@
             font-weight: 900; letter-spacing: -1px; cursor: pointer;
             position: relative;
         }
-        /* 3. GLITCH EFFECT */
         .brand:hover { animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite; }
         @keyframes glitch {
-            0% { transform: translate(0) }
-            20% { transform: translate(-2px, 2px) }
-            40% { transform: translate(-2px, -2px) }
-            60% { transform: translate(2px, 2px) }
-            80% { transform: translate(2px, -2px) }
-            100% { transform: translate(0) }
+            0% { transform: translate(0) } 20% { transform: translate(-2px, 2px) } 40% { transform: translate(-2px, -2px) }
+            60% { transform: translate(2px, 2px) } 80% { transform: translate(2px, -2px) } 100% { transform: translate(0) }
         }
 
         .nav-controls { display: flex; gap: 10px; align-items: center; }
-        
-        /* 5. SEARCH BAR */
         .search-box {
             background: #111; border: 1px solid var(--border);
             color: #fff; padding: 8px 12px;
@@ -95,11 +87,9 @@
             text-transform: uppercase; font-size: 0.8rem; position: relative; overflow: hidden;
         }
         .nav-btn:hover { background: var(--neon-blue); color: #000; }
-        /* 15. RIPPLE EFFECT */
         .ripple { position: absolute; background: rgba(255,255,255,0.3); border-radius: 50%; transform: scale(0); animation: ripple-anim 0.6s linear; pointer-events: none; }
         @keyframes ripple-anim { to { transform: scale(4); opacity: 0; } }
 
-        /* 22. MOBILE MENU TOGGLE */
         .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
         @media(max-width: 768px) {
             .nav-controls { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #000; padding: 20px; border-bottom: 1px solid var(--border); }
@@ -107,13 +97,11 @@
             .menu-toggle { display: block; }
         }
 
-        /* 18. BREADCRUMBS */
         .breadcrumbs {
             padding: 10px 20px; font-size: 0.8rem; color: var(--text-dim);
             font-family: var(--font-mono); border-bottom: 1px solid #222;
         }
 
-        /* 8. ONLINE COUNTER & 16. COUNTDOWN */
         .status-bar {
             display: flex; justify-content: space-between; padding: 0 20px;
             font-family: var(--font-mono); font-size: 0.7rem; color: var(--neon-green);
@@ -132,7 +120,6 @@
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: 4px; position: relative; cursor: pointer;
             overflow: hidden; transition: 0.3s;
-            /* 2. 3D TILT BASE */
             transform-style: preserve-3d; perspective: 1000px;
         }
         .reel-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
@@ -150,19 +137,41 @@
         .card {
             background: var(--bg-card); border: 1px solid var(--border);
             border-radius: 8px; overflow: hidden; position: relative; cursor: pointer;
-            transition: transform 0.1s; /* Faster for JS tilt */
-            transform-style: preserve-3d;
+            transition: transform 0.1s; transform-style: preserve-3d;
         }
-        .card:hover { z-index: 10; }
+        .card:hover { z-index: 10; transform: scale(1.02); }
         
         /* RARITY GLOWS */
         .card[data-rarity="ULTRA_RARE"] { border: 1px solid var(--neon-pink); box-shadow: 0 0 10px rgba(255, 0, 255, 0.2); }
         .card[data-rarity="EPIC"] { border: 1px solid var(--neon-blue); box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
 
+        /* UNIQUE EDITION GLOW */
+        .card[data-edition="unique"] {
+            border: 1px solid #ffd700;
+            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+            position: relative;
+        }
+        .card[data-edition="unique"]::after {
+            content: "UNIQUE";
+            position: absolute; top: 10px; right: 10px;
+            background: #ffd700; color: #000;
+            font-size: 0.6rem; padding: 2px 6px; font-weight: bold;
+            border-radius: 2px; z-index: 5;
+        }
+
+        /* PRODUCT TYPE BADGE */
+        .product-type-badge {
+            position: absolute; top: 10px; left: 10px;
+            background: rgba(0,0,0,0.8); border: 1px solid var(--neon-blue);
+            color: var(--neon-blue); font-size: 0.6rem; padding: 3px 6px;
+            text-transform: uppercase; font-weight: bold; z-index: 5;
+            backdrop-filter: blur(4px); pointer-events: none;
+        }
+
         .card-img-container { position: relative; overflow: hidden; height: 220px; }
         .card-img { width: 100%; height: 100%; object-fit: cover; }
         
-        /* 25. MINT PROGRESS BAR */
+        /* MINT PROGRESS BAR */
         .mint-progress {
             position: absolute; bottom: 0; left: 0; height: 3px; background: var(--neon-green);
             width: 0%; transition: width 0.5s;
@@ -173,7 +182,13 @@
         .card-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; }
         .price { color: var(--neon-green); font-family: var(--font-mono); font-weight: bold; }
 
-        /* 12. LOADING SKELETON */
+        /* EDITION TEXT */
+        .edition-text {
+            font-size: 0.7rem; color: var(--text-dim);
+            font-family: var(--font-mono); margin-top: 5px; display: block;
+        }
+
+        /* SKELETON LOADER */
         .skeleton {
             background: linear-gradient(90deg, #111 25%, #222 50%, #111 75%);
             background-size: 200% 100%;
@@ -197,7 +212,6 @@
             background: #000; position: relative; display: flex;
             align-items: center; justify-content: center; overflow: hidden;
         }
-        /* 20. IMAGE ZOOM/PAN */
         .modal-img {
             max-width: 100%; max-height: 100%; object-fit: contain;
             cursor: grab; transition: transform 0.1s;
@@ -220,25 +234,22 @@
             background: rgba(0,0,0,0.5); border: 1px solid #fff; color: #fff;
             width: 30px; height: 30px; border-radius: 50%; cursor: pointer; z-index: 20;
             display: flex; align-items: center; justify-content: center; font-weight: bold;
+            pointer-events: auto;
         }
 
-        /* 7. SPARKLINE GRAPH */
         .sparkline { width: 100px; height: 30px; stroke: var(--neon-green); fill: none; stroke-width: 2; }
 
-        /* 6. LORE GENERATOR */
         .lore-box {
             background: #000; border-left: 2px solid var(--neon-blue);
             padding: 10px; font-family: var(--font-mono); font-size: 0.8rem;
             color: #aaa; margin: 10px 0; line-height: 1.4; min-height: 60px;
         }
 
-        /* 14. SOUND WAVE */
         .sound-wave { display: flex; gap: 2px; align-items: flex-end; height: 15px; }
         .bar { width: 3px; background: var(--neon-blue); animation: wave 1s infinite ease-in-out; }
         .bar:nth-child(2) { animation-delay: 0.1s; } .bar:nth-child(3) { animation-delay: 0.2s; }
         @keyframes wave { 0%, 100% { height: 2px; } 50% { height: 15px; } }
 
-        /* CHAT */
         .terminal-chat {
             background: #000; border: 1px solid var(--border); padding: 15px;
             font-family: var(--font-mono); font-size: 0.8rem; height: 200px;
@@ -254,7 +265,6 @@
             padding: 0 15px; cursor: pointer; font-weight: bold;
         }
 
-        /* 19. BACK TO TOP */
         .back-to-top {
             position: fixed; bottom: 20px; right: 20px;
             background: var(--neon-blue); color: #000; width: 40px; height: 40px;
@@ -264,13 +274,11 @@
         }
         .back-to-top.visible { opacity: 1; pointer-events: all; }
 
-        /* 23. FPS COUNTER */
         .fps-counter {
             position: fixed; bottom: 10px; left: 10px; font-family: var(--font-mono);
             font-size: 0.7rem; color: #333; pointer-events: none;
         }
 
-        /* 17. SKILL TOOLTIP */
         .skill-tag {
             background: #21262d; border: 1px solid #30363d; padding: 4px 8px;
             border-radius: 4px; font-size: 0.75rem; position: relative; cursor: help;
@@ -297,19 +305,19 @@
 </head>
 <body>
 
-    <!-- 1. CANVAS PARTICLES -->
+    <!-- CANVAS PARTICLES -->
     <canvas id="particle-canvas"></canvas>
-    <!-- 25. SCANLINES -->
+    <!-- SCANLINES -->
     <div class="scanlines"></div>
-    <!-- 23. FPS -->
+    <!-- FPS -->
     <div class="fps-counter" id="fps">60 FPS</div>
-    <!-- 19. BACK TO TOP -->
+    <!-- BACK TO TOP -->
     <div class="back-to-top" onclick="window.scrollTo(0,0)">^</div>
 
-    <!-- 21. COMMAND HEADER -->
+    <!-- COMMAND HEADER -->
     <div class="cmd-header">
         <span id="cmd-text">> INITIALIZING NEURAL INTERFACE...</span>
-        <span>V.17.0.4</span>
+        <span>V.18.0</span>
     </div>
 
     <!-- NAV -->
@@ -319,21 +327,17 @@
         <div class="nav-controls" id="nav-controls">
             <button class="nav-btn" onclick="showHome()">Reels</button>
             <button class="nav-btn" onclick="showShop()">Sourcing</button>
-            <!-- 24. SURPRISE ME -->
             <button class="nav-btn" onclick="randomItem()">Surprise Me</button>
-            <!-- 5. SEARCH -->
             <input type="text" class="search-box" placeholder="FIND ASSET..." onkeyup="filterGrid(this.value)">
-            <!-- 9. SORT -->
             <select class="search-box" style="width:auto;" onchange="sortGrid(this.value)">
                 <option value="newest">Newest</option>
                 <option value="price_low">Price: Low</option>
                 <option value="price_high">Price: High</option>
-                <option value="rarity">Rarity</option>
             </select>
         </div>
     </nav>
 
-    <!-- 18. BREADCRUMBS -->
+    <!-- BREADCRUMBS -->
     <div class="breadcrumbs" id="breadcrumbs">HOME</div>
 
     <!-- STATUS BAR -->
@@ -350,9 +354,7 @@
                 <span>// TOP TIER ACQUISITIONS</span>
                 <span style="font-size:0.7rem; color:var(--neon-pink);">LIVE FEED</span>
             </div>
-            <div id="reels-container" class="reels-container">
-                <!-- JS loads here -->
-            </div>
+            <div id="reels-container" class="reels-container"></div>
         </div>
     </div>
 
@@ -362,9 +364,7 @@
                 <span>// FULL INVENTORY DATABASE</span>
                 <span id="item-count">LOADING...</span>
             </div>
-            <div id="shop-grid" class="grid">
-                <!-- JS loads here -->
-            </div>
+            <div id="shop-grid" class="grid"></div>
         </div>
     </div>
 
@@ -375,14 +375,12 @@
             
             <div class="modal-left">
                 <div id="burn-effect" class="burn-overlay"></div>
-                <!-- 20. ZOOM ENABLED IMAGE -->
                 <img id="modal-img" src="" class="modal-img" onmousedown="startZoom(event)">
             </div>
             
             <div class="modal-right">
                 <div style="display:flex; justify-content:space-between; align-items:start;">
                     <h2 id="modal-title" style="color:var(--neon-blue); font-family:var(--font-mono); margin:0; width:70%;">ASSET NAME</h2>
-                    <!-- 7. SPARKLINE -->
                     <svg class="sparkline" viewBox="0 0 100 30">
                         <path id="sparkline-path" d="M0,15 Q50,0 100,15" stroke="#00ff41" fill="none" stroke-width="2"/>
                     </svg>
@@ -390,12 +388,378 @@
                 
                 <div style="display:flex; gap:10px; margin-bottom:15px;">
                     <span id="modal-rarity" style="background:#333; padding:2px 8px; font-size:0.7rem; color:#fff;"></span>
+                    <!-- EDITION BADGE -->
+                    <span id="edition-badge" style="border:1px solid #333; padding:2px 8px; font-size:0.7rem; color:var(--neon-blue);"></span>
                     <span id="modal-price" style="color:var(--neon-green); font-family:var(--font-mono); font-weight:bold; margin-left:auto; font-size:1.2rem;"></span>
                 </div>
 
-                <!-- 6. LORE GENERATOR -->
+                <!-- PHYSICAL PRODUCT DESCRIPTION -->
+                <div style="font-size:0.8rem; color:#888; margin-bottom:15px; border-bottom:1px solid #222; padding-bottom:10px;">
+                    <strong style="color:var(--neon-blue);">PHYSICAL FORM:</strong> <span id="product-desc"></span>
+                </div>
+
                 <div id="lore-text" class="lore-box">Initializing backstory analysis...</div>
                 <button class="btn-action" onclick="generateLore()" style="width:100%; padding:5px;">GENERATE LORE</button>
 
                 <div style="margin:15px 0;">
-                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; colo
+                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>STR</span><span id="val-str"></span></div>
+                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-str" style="height:100%; background:var(--neon-blue); width:0%; transition:1s;"></div></div>
+                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>INT</span><span id="val-int"></span></div>
+                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-int" style="height:100%; background:var(--neon-pink); width:0%; transition:1s;"></div></div>
+                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>DEX</span><span id="val-dex"></span></div>
+                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-dex" style="height:100%; background:var(--neon-green); width:0%; transition:1s;"></div></div>
+                </div>
+
+                <div id="modal-skills" style="display:flex; gap:5px; flex-wrap:wrap; margin-bottom:15px;"></div>
+
+                <div style="display:flex; gap:10px; margin-top:10
+                        <!-- BREADCRUMBS -->
+    <div class="breadcrumbs" id="breadcrumbs">HOME</div>
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+        <span>🟢 SYSTEM ONLINE</span>
+        <span>USERS ONLINE: <span id="online-count">842</span></span>
+        <span>⏱ NEXT MINT: <span id="mint-timer">04:59:12</span></span>
+    </div>
+
+    <!-- VIEWS -->
+    <div id="view-home" class="view">
+        <div class="container">
+            <div class="section-header">
+                <span>// TOP TIER ACQUISITIONS</span>
+                <span style="font-size:0.7rem; color:var(--neon-pink);">LIVE FEED</span>
+            </div>
+            <div id="reels-container" class="reels-container"></div>
+        </div>
+    </div>
+
+    <div id="view-shop" class="view hidden">
+        <div class="container">
+            <div class="section-header">
+                <span>// FULL INVENTORY DATABASE</span>
+                <span id="item-count">LOADING...</span>
+            </div>
+            <div id="shop-grid" class="grid"></div>
+        </div>
+    </div>
+
+    <!-- MODAL -->
+    <div id="product-modal" class="modal" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="close-modal" onclick="closeModalDirect()">×</button>
+            
+            <div class="modal-left">
+                <div id="burn-effect" class="burn-overlay"></div>
+                <img id="modal-img" src="" class="modal-img" onmousedown="startZoom(event)">
+            </div>
+            
+            <div class="modal-right">
+                <div style="display:flex; justify-content:space-between; align-items:start;">
+                    <h2 id="modal-title" style="color:var(--neon-blue); font-family:var(--font-mono); margin:0; width:70%;">ASSET NAME</h2>
+                    <svg class="sparkline" viewBox="0 0 100 30">
+                        <path id="sparkline-path" d="M0,15 Q50,0 100,15" stroke="#00ff41" fill="none" stroke-width="2"/>
+                    </svg>
+                </div>
+                
+                <div style="display:flex; gap:10px; margin-bottom:15px;">
+                    <span id="modal-rarity" style="background:#333; padding:2px 8px; font-size:0.7rem; color:#fff;"></span>
+                    <!-- EDITION BADGE -->
+                    <span id="edition-badge" style="border:1px solid #333; padding:2px 8px; font-size:0.7rem; color:var(--neon-blue);"></span>
+                    <span id="modal-price" style="color:var(--neon-green); font-family:var(--font-mono); font-weight:bold; margin-left:auto; font-size:1.2rem;"></span>
+                </div>
+
+                <!-- PHYSICAL PRODUCT DESCRIPTION -->
+                <div style="font-size:0.8rem; color:#888; margin-bottom:15px; border-bottom:1px solid #222; padding-bottom:10px;">
+                    <strong style="color:var(--neon-blue);">PHYSICAL FORM:</strong> <span id="product-desc"></span>
+                </div>
+
+                <div id="lore-text" class="lore-box">Initializing backstory analysis...</div>
+                <button class="btn-action" onclick="generateLore()" style="width:100%; padding:5px;">GENERATE LORE</button>
+
+                <div style="margin:15px 0;">
+                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>STR</span><span id="val-str"></span></div>
+                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-str" style="height:100%; background:var(--neon-blue); width:0%; transition:1s;"></div></div>
+                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>INT</span><span id="val-int"></span></div>
+                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-int" style="height:100%; background:var(--neon-pink); width:0%; transition:1s;"></div></div>
+                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>DEX</span><span id="val-dex"></span></div>
+                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-dex" style="height:100%; background:var(--neon-green); width:0%; transition:1s;"></div></div>
+                </div>
+
+                <div id="modal-skills" style="display:flex; gap:5px; flex-wrap:wrap; margin-bottom:15px;"></div>
+
+                <div style="display:flex; gap:10px; margin-top:10px;">
+                    <button class="btn-action" style="flex:1;" onclick="triggerBurn()">PREVIEW BURN</button>
+                    <button class="btn-action" style="background:#333; color:#fff;" onclick="downloadImage()">DL</button>
+                    <button class="btn-action" style="background:#333; color:#fff;" onclick="copyLink()">SHARE</button>
+                </div>
+
+                <div style="margin-top:20px; flex-grow:1; display:flex; flex-direction:column;">
+                    <div style="color:var(--text-dim); font-size:0.7rem; margin-bottom:5px; font-family:var(--font-mono); display:flex; justify-content:space-between;">
+                        <span>// SECURE COMMS</span>
+                        <div class="sound-wave"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+                    </div>
+                    <div id="chat-box" class="terminal-chat"></div>
+                    <div class="chat-input-area">
+                        <input type="text" id="chat-input" class="chat-input" placeholder="Transmit...">
+                        <button class="chat-send" onclick="postComment()">></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- PARTICLE SYSTEM ---
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        class Particle {
+            constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.vx = (Math.random() - 0.5) * 0.5; this.vy = (Math.random() - 0.5) * 0.5; this.size = Math.random() * 2; }
+            update() { this.x += this.vx; this.y += this.vy; if(this.x < 0 || this.x > canvas.width) this.vx *= -1; if(this.y < 0 || this.y > canvas.height) this.vy *= -1; }
+            draw() { ctx.fillStyle = '#00f3ff'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); }
+        }
+        for(let i=0; i<50; i++) particles.push(new Particle());
+        
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => { p.update(); p.draw(); });
+            for(let i=0; i<particles.length; i++) {
+                for(let j=i; j<particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    if(dist < 100) { ctx.strokeStyle = `rgba(0, 243, 255, ${1 - dist/100})`; ctx.lineWidth = 0.5; ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); }
+                }
+            }
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+
+        // --- GLOBAL STATE ---
+        let allItems = [];
+        let currentItem = null;
+
+        const cmds = ["CONNECTING TO NEURAL NET...", "SYNCING LEDGER...", "VERIFYING ASSETS...", "ENCRYPTING CHANNEL..."];
+        let cmdIdx = 0;
+        setInterval(() => { document.getElementById('cmd-text').innerText = "> " + cmds[cmdIdx]; cmdIdx = (cmdIdx + 1) % cmds.length; }, 3000);
+
+        setInterval(() => { document.getElementById('online-count').innerText = 800 + Math.floor(Math.random() * 50); }, 5000);
+        let time = 17999;
+        setInterval(() => {
+            time--;
+            const h = Math.floor(time / 3600).toString().padStart(2, '0');
+            const m = Math.floor((time % 3600) / 60).toString().padStart(2, '0');
+            const s = (time % 60).toString().padStart(2, '0');
+            document.getElementById('mint-timer').innerText = `${h}:${m}:${s}`;
+        }, 1000);
+
+        // --- DATA LOGIC ---
+        async function loadData() {
+            const res = await fetch('database.json?nocache=' + new Date().getTime());
+            const data = await res.json();
+            allItems = data.inventory || [];
+            document.getElementById('item-count').innerText = allItems.length + " ASSETS FOUND";
+            return allItems;
+        }
+
+        function getImg(url) { return (!url || url === 'https://placehold.co/600x600/000/fff?text=NO+DATA') ? 'https://placehold.co/600x600/111/333?text=NO+IMAGE' : (url.startsWith('http') ? url : 'images/' + url); }
+
+        async function loadReels() {
+            const container = document.getElementById('reels-container');
+            const items = await loadData();
+            const topItems = items.filter(i => i.rarity !== 'NORMAL').slice(-5);
+            container.innerHTML = topItems.map(item => `
+                <div class="reel-card" onclick='openModal(${JSON.stringify(item)})'>
+                    <img src="${getImg(item.art_url)}" class="reel-img" loading="lazy">
+                </div>
+            `).join('');
+        }
+
+        async function loadShop() {
+            const grid = document.getElementById('shop-grid');
+            grid.innerHTML = Array(6).fill('<div class="card"><div class="card-img-container skeleton"></div><div class="card-body"><div class="skeleton" style="height:20px; margin-bottom:10px;"></div><div class="skeleton" style="width:50px; height:15px;"></div></div></div>').join('');
+            const items = await loadData();
+            renderGrid(items);
+        }
+
+        function filterGrid(query) {
+            const filtered = allItems.filter(i => i.name.toLowerCase().includes(query.toLowerCase()));
+            renderGrid(filtered);
+        }
+        function sortGrid(method) {
+            let sorted = [...allItems].reverse();
+            if(method === 'price_low') sorted.sort((a,b) => a.price - b.price);
+            if(method === 'price_high') sorted.sort((a,b) => b.price - a.price);
+            renderGrid(sorted);
+        }
+
+        function renderGrid(items) {
+            const grid = document.getElementById('shop-grid');
+            grid.innerHTML = items.map(item => {
+                const editionType = (item.edition && item.edition.includes("1 of 1")) ? "unique" : "standard";
+                const productType = item.product_type || 'Digital Asset';
+                const editionText = item.edition || 'Open Edition';
+                
+                return `
+                <div class="card" 
+                     data-rarity="${item.rarity}" 
+                     data-edition="${editionType}"
+                     onclick='openModal(${JSON.stringify(item)})' 
+                     onmousemove="handleTilt(event, this)" 
+                     onmouseleave="resetTilt(this)">
+                    
+                    <div class="card-img-container">
+                        <img src="${getImg(item.art_url)}" class="card-img" loading="lazy">
+                        <div class="mint-progress" style="width:${Math.random()*100}%"></div>
+                        <div class="product-type-badge">${productType}</div>
+                    </div>
+                    
+                    <div class="card-body">
+                        <div class="card-title">${item.name}</div>
+                        <span class="edition-text">${editionText}</span>
+                        <div class="card-meta">
+                            <span style="font-size:0.7rem; color:#888;">${item.rarity}</span>
+                            <span class="price">$${item.price}</span>
+                        </div>
+                    </div>
+                </div>
+            `}).join('');
+        }
+
+        function handleTilt(e, card) {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -10;
+            const rotateY = ((x - centerX) / centerX) * 10;
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        }
+        function resetTilt(card) { card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)'; }
+
+        function showHome() {
+            document.getElementById('view-home').classList.remove('hidden');
+            document.getElementById('view-shop').classList.add('hidden');
+            document.getElementById('breadcrumbs').innerText = "HOME";
+            loadReels();
+        }
+        function showShop() {
+            document.getElementById('view-home').classList.add('hidden');
+            document.getElementById('view-shop').classList.remove('hidden');
+            document.getElementById('breadcrumbs').innerText = "HOME > SOURCING";
+            loadShop();
+        }
+        function toggleMenu() { document.getElementById('nav-controls').classList.toggle('active'); }
+        async function randomItem() {
+            const items = await loadData();
+            const item = items[Math.floor(Math.random() * items.length)];
+            openModal(item);
+        }
+
+        function openModal(item) {
+            currentItem = item;
+            const m = document.getElementById('product-modal');
+            document.getElementById('modal-img').src = getImg(item.art_url);
+            document.getElementById('modal-title').innerText = item.name.toUpperCase();
+            document.getElementById('modal-rarity').innerText = item.rarity;
+            document.getElementById('modal-price').innerText = '$' + item.price;
+            document.getElementById('breadcrumbs').innerText = `HOME > SOURCING > ${item.name.substring(0,10)}...`;
+            
+            // Update Product Details
+            document.getElementById('product-desc').innerText = item.product_desc || "High quality generative art asset.";
+            document.getElementById('edition-badge').innerText = item.edition || "Open Edition";
+
+            const stats = item.stats || {str:50, int:50, dex:50};
+            ['str','int','dex'].forEach(s => {
+                document.getElementById(`val-${s}`).innerText = stats[s];
+                document.getElementById(`bar-${s}`).style.width = stats[s] + '%';
+            });
+
+            const skillDesc = { "Combat": "High damage melee.", "Hacking": "Breaches firewalls.", "Stealth": "Undetectable." };
+            const sCont = document.getElementById('modal-skills');
+            sCont.innerHTML = (item.skills || ['Collectible']).map(s => `<span class="skill-tag" data-desc="${skillDesc[s]||'Special ability.'}">${s}</span>`).join('');
+
+            const points = []; for(let i=0; i<=10; i++) points.push(`${i*10},${15 + (Math.random()*20 - 10)}`);
+            document.getElementById('sparkline-path').setAttribute('d', `M${points.join(' L')}`);
+
+            generateLore();
+            document.getElementById('burn-effect').classList.remove('burn-active');
+            initChat(item.name);
+            m.style.display = 'flex';
+        }
+
+        function closeModal(e) { if(e.target.id === 'product-modal') closeModalDirect(); }
+        function closeModalDirect() { document.getElementById('product-modal').style.display = 'none'; }
+
+        function generateLore() {
+            if(!currentItem) return;
+            const adj = ["Silent", "Neon", "Cyber", "Quantum", "Void", "Radioactive"];
+            const noun = ["Wraith", "Samurai", "Ronin", "Glitch", "Phantom", "Vanguard"];
+            const loc = ["Sector 7", "The Outer Rim", "Neo-Tokyo", "The Deep Web", "Orbit Station"];
+            const act = ["data theft", "assassination", "system override", "espionage", "survival"];
+            const lore = `Unit: ${currentItem.name}. Origin: ${loc[Math.floor(Math.random()*loc.length)]}. Directive: ${act[Math.floor(Math.random()*act.length)]}. Alias: "${adj[Math.floor(Math.random()*adj.length)]} ${noun[Math.floor(Math.random()*noun.length)]}".`;
+            document.getElementById('lore-text').innerText = lore;
+        }
+
+        let isZooming = false;
+        function startZoom(e) {
+            e.preventDefault(); isZooming = true; const img = e.target; img.style.cursor = 'grabbing';
+            const onMove = (ev) => {
+                if(!isZooming) return;
+                const x = (window.innerWidth / 2 - ev.pageX) / 10;
+                const y = (window.innerHeight / 2 - ev.pageY) / 10;
+                img.style.transform = `scale(2) translate(${x}px, ${y}px)`;
+            };
+            const onUp = () => { isZooming = false; img.style.cursor = 'grab'; img.style.transform = 'scale(1) translate(0,0)'; window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); };
+            window.addEventListener('mousemove', onMove); window.addEventListener('mouseup', onUp);
+        }
+
+        function triggerBurn() { const el = document.getElementById('burn-effect'); el.classList.add('burn-active'); setTimeout(() => el.classList.remove('burn-active'), 2000); }
+        function downloadImage() { const link = document.createElement('a'); link.href = getImg(currentItem.art_url); link.download = currentItem.name + '.jpg'; link.click(); }
+        function copyLink() { navigator.clipboard.writeText(window.location.href + '#item=' + currentItem.name); alert("Asset link copied."); }
+
+        document.addEventListener('keydown', (e) => { if(e.key === "Escape") closeModalDirect(); });
+
+        function initChat(itemName) {
+            const chatBox = document.getElementById('chat-box'); chatBox.innerHTML = '';
+            const fakes = [{u: "SYS_ADMIN", t: `Decrypted: ${itemName} metadata.`}, {u: "Trader_X", t: "Market value holding steady."}, {u: "Ghost", t: "Seen one in Sector 4."}];
+            fakes.forEach(c => addMsg(c.u, c.t));
+        }
+        function postComment() {
+            const input = document.getElementById('chat-input'); const txt = input.value.trim();
+            if(txt) { addMsg("YOU", txt); input.value=''; setTimeout(()=>addMsg("BOT", "Local node updated."), 800); }
+        }
+        function addMsg(user, text) {
+            const d = document.createElement('div');
+            d.className = 'chat-msg'; d.style.marginBottom = '8px'; d.style.borderBottom = '1px solid #222';
+            d.innerHTML = `<span style="color:${user==='YOU'?'#00ff41':'#00f3ff'}; font-weight:bold;">${user}:</span> <span style="color:#ccc;">${text}</span>`;
+            const box = document.getElementById('chat-box'); box.appendChild(d); box.scrollTop = box.scrollHeight;
+        }
+
+        document.querySelectorAll('.nav-btn, .btn-action').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                let r = document.createElement('div');
+                r.className = 'ripple';
+                r.style.left = (e.clientX - this.getBoundingClientRect().left) + 'px';
+                r.style.top = (e.clientY - this.getBoundingClientRect().top) + 'px';
+                this.appendChild(r);
+                setTimeout(() => r.remove(), 600);
+            })
+        });
+
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            if(window.scrollY > 300) btn.classList.add('visible');
+            else btn.classList.remove('visible');
+        });
+
+        showHome();
+    </script>
+</body>
+    </html>
