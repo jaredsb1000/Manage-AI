@@ -179,6 +179,27 @@
             "product_type": "Ceramic Coffee Mug",
             "edition": "1 of 1,000,000 (Open)",
             "product_desc": "Durable ceramic mug in glossy finish."
+        },
+        {
+            "name": "Road Runner",
+            "rarity": "NORMAL",
+            "price": 25,
+            "profit": 23.25,
+            "market_trend": "TRENDING",
+            "art_url": "images/352751.jpg",
+            "stats": {
+                "str": 42,
+                "int": 43,
+                "dex": 64
+            },
+            "skills": [
+                "Engineering",
+                "Sorcery",
+                "Hacking"
+            ],
+            "product_type": "Ceramic Coffee Mug",
+            "edition": "1 of 1,000,000 (Open)",
+            "product_desc": "Durable ceramic mug in glossy finish."
         }
     ],
     "family_protocols": {
