@@ -104,6 +104,24 @@
             },
             "status": "Virtual",
             "art_url": "images/819360.jpg"
+        },
+        {
+            "name": "Numbuh 4",
+            "rarity": "NORMAL",
+            "price": 45,
+            "profit": 42.25,
+            "market_trend": "TRENDING",
+            "art_url": "https://placehold.co/600x400/161b22/58a6ff?text=Render+Failed",
+            "stats": {
+                "str": 70,
+                "int": 52,
+                "dex": 59
+            },
+            "skills": [
+                "Sorcery",
+                "Firewall",
+                "Agility"
+            ]
         }
     ],
     "family_protocols": {
