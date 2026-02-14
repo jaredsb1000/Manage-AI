@@ -24,6 +24,12 @@ jobs:
       - run: pip install requests openai
 
       - name: Execute Manage
+        env:
+          # THIS IS THE FIX: Connecting your GitHub Secrets to the script
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PRINTFUL_API_KEY: ${{ secrets.PRINTFUL_API_KEY }}
+          LEMON_API_KEY: ${{ secrets.LEMON_API_KEY }}
+          LEMON_STORE_ID: ${{ secrets.LEMON_STORE_ID }}
         run: python manage.py
       
       # This step commits the new database changes AND the new image files to the repo
