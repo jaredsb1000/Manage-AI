@@ -82,5 +82,9 @@
     {
         "name": "Space Mutants",
         "price": 50
+    },
+    {
+        "name": "Samurai Warrior",
+        "price": 50
     }
 ]
