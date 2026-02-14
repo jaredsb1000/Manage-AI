@@ -8,7 +8,7 @@ on:
 jobs:
   run_script:
     runs-on: ubuntu-latest
-    # This gives Manage permission to save changes to the database
+    # This gives Manage permission to save changes to the database AND new images
     permissions:
       contents: write
     
@@ -27,11 +27,12 @@ jobs:
       - name: Execute Manage
         run: python manage.py
       
-      # This step commits the new database changes back to the repo
+      # This step commits the new database changes AND the new image files to the repo
       - name: Update Database
         run: |
           git config --local user.email "manage@ai.com"
           git config --local user.name "Manage"
-          git add database.json
+          # Changed 'database.json' to '.' so it captures the new 'images' folder
+          git add .
           git diff --quiet && git diff --staged --quiet || git commit -m "Manage: Updated Inventory"
           git push
