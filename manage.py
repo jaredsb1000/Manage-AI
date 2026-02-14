@@ -32,29 +32,25 @@ class SpoofLibrary:
         ]
         return random.choice(characters)
 
-# --- CHARACTER FORGE (New: Generates Stats & Skills) ---
+# --- CHARACTER FORGE (Generates Stats & Skills) ---
 class CharacterForge:
     def generate_data(self, rarity):
-        """Generates RPG-style stats and skills based on rarity."""
         multiplier = 1
         if rarity == "EPIC": multiplier = 1.5
         if rarity == "ULTRA_RARE": multiplier = 2.0
 
-        # Generate Stats
         stats = {
             "str": min(100, int(random.randint(40, 70) * multiplier)),
             "int": min(100, int(random.randint(40, 70) * multiplier)),
             "dex": min(100, int(random.randint(40, 70) * multiplier))
         }
 
-        # Generate Skills
         skill_pool = [
             "Firewall", "Data Mining", "Stealth", "Hacking", 
             "Combat", "Diplomacy", "Engineering", "Sorcery",
             "Speed", "Strength", "Agility", "Telepathy"
         ]
         
-        # Higher rarity = more skills
         num_skills = 3 if rarity == "NORMAL" else (4 if rarity == "EPIC" else 5)
         skills = random.sample(skill_pool, num_skills)
         
@@ -63,16 +59,13 @@ class CharacterForge:
 # --- PRINTFUL MANAGER ---
 class PrintfulManager:
     def __init__(self):
-        # REMOVED KEY FOR SECURITY: ADD 'PRINTFUL_API_KEY' TO GITHUB SECRETS
         self.api_key = os.getenv("PRINTFUL_API_KEY")
         self.base_url = "https://api.printful.com"
 
     def create_physical_product(self, art_url, character, rarity):
-        price_map = {"NORMAL": 20, "EPIC": 40, "ULTRA_RARE": 500}
-        item_price = price_map.get(rarity, 20)
-        
-        print(f"-> [PRINTFUL] Rarity: {rarity} | Physical Value: ${item_price}")
-        print(f"-> [SIMULATION] Syncing Art to Printful ({rarity} Tier)...")
+        # NOTE: In a full integration, we would map 'rarity' to a specific Printful Variant ID here.
+        # For now, we simulate the sync.
+        print(f"-> [PRINTFUL] Syncing {character} to Printful...")
         return True
 
 # --- SOCIAL MANAGER ---
@@ -86,13 +79,12 @@ class SocialManager:
             "Why is this so satisfying to look at? 😵"
         ]
         hook = random.choice(hooks)
-        tiktok_caption = f"{hook}\n\nCheck out this trippy {character} art I just found! 🎨\nLink in Bio! 👇\n#spoofart #trippy #aiart"
+        tiktok_caption = f"{hook}\n\nCheck out this {character} art! 🎨\nLink in Bio! 👇"
         return {"tiktok": tiktok_caption, "facebook": tiktok_caption}
 
 # --- LEMON SQUEEZY MANAGER ---
 class LemonManager:
     def __init__(self):
-        # REMOVED KEY FOR SECURITY: ADD 'LEMON_API_KEY' & 'STORE_ID' TO GITHUB SECRETS
         self.api_key = os.getenv("LEMON_API_KEY")
         self.store_id = os.getenv("LEMON_STORE_ID")
         self.base_url = "https://api.lemonsqueezy.com/v1"
@@ -107,13 +99,10 @@ class LemonManager:
     def create_receipt_product(self, character, art_url, sale_price, physical_price, rarity, stats, skills):
         print(f"-> [LEMON] Connecting to Lemon Squeezy...")
         
-        # --- SIMULATION CHECK ---
         if not self.store_id or self.store_id == "PASTE_YOUR_LEMON_STORE_ID_HERE":
             print("-> [LEMON] STORE ID MISSING - ENTERING SIMULATION MODE")
             return "https://simulation.lemonsqueezy.com/view-receipt"
-        # -----------------------
-
-        # (Real API logic would go here if Store ID was present)
+        
         return "https://simulation.lemonsqueezy.com/view-receipt"
 
 # --- SMART BANKER ---
@@ -184,8 +173,8 @@ class Manage:
     def __init__(self):
         self.config = Config()
         self.library = SpoofLibrary()
-        self.renderer = HyperRenderer() # NEW: Using the powerful engine
-        self.forge = CharacterForge()   # NEW: Using the stat generator
+        self.renderer = HyperRenderer()
+        self.forge = CharacterForge()
         self.hands_print = PrintfulManager()
         self.hands_lemon = LemonManager()
         self.hands_social = SocialManager()
@@ -193,7 +182,7 @@ class Manage:
         self.banker = SmartBanker()
         self.analyst = InventoryAnalyst()
         self.nexus = NexusExporter()
-        print(f"Manage v17.0 (HyperRenderer Edition) Online.")
+        print(f"Manage v18.0 (Physical Asset Edition) Online.")
 
     def daily_grind(self):
         # 1. Scheduler
@@ -201,9 +190,40 @@ class Manage:
         print("-" * 40)
         print(f"[SCHEDULER] RARITY DETECTED: {rarity}")
 
-        # 2. Pricing
-        pricing = {"NORMAL": {"fee": 45, "phys": 20}, "EPIC": {"fee": 85, "phys": 40}, "ULTRA_RARE": {"fee": 500, "phys": 500}}
-        plan = pricing[rarity]
+        # 2. PRODUCT CONFIGURATION (New Logic)
+        # Defines what physical item is created, its price, and its edition tier.
+        product_config = {
+            "ULTRA_RARE": {
+                "fee": 100, 
+                "phys": 60, 
+                "type": "Premium Stretched Canvas", 
+                "edition": "1 of 1 (Unique)",
+                "desc": "Museum-quality canvas on a wooden frame."
+            },
+            "EPIC": {
+                "fee": 50, 
+                "phys": 35, 
+                "type": "Unisex Heavy Blend Hoodie", 
+                "edition": "1 of 100,000 (Limited)",
+                "desc": "Comfortable, classic fit hoodie."
+            },
+            "NORMAL": {
+                "fee": 25, 
+                "phys": 15, 
+                "type": "Ceramic Coffee Mug", 
+                "edition": "1 of 1,000,000 (Open)",
+                "desc": "Durable ceramic mug in glossy finish."
+            }
+        }
+        
+        plan = product_config[rarity]
+        
+        # Extract variables for use later
+        physical_product_name = plan["type"]
+        edition_tier = plan["edition"]
+        product_description = plan["desc"]
+        sale_price = plan['fee']
+        physical_price = plan['phys']
 
         # 3. Select Character
         print("-" * 40)
@@ -212,11 +232,10 @@ class Manage:
         market_trend = self.analyst.analyze_character(character)
         print(f"-> [SELECTED] {character} ({market_trend})")
 
-        # 4. Generate Art & Stats (New Integrated Step)
+        # 4. Generate Art & Stats
         print("-" * 40)
         print("PHASE 2: GENERATING MASTERPIECE & DATA")
         
-        # Generate a unique filename
         seed = random.randint(100000, 999999)
         filename = f"{seed}.jpg"
         
@@ -236,8 +255,6 @@ class Manage:
         # 6. Calculate Costs
         print("-" * 40)
         print("PHASE 4: CALCULATING COSTS")
-        sale_price = plan['fee']
-        physical_price = plan['phys']
         fee, profit = self.hands_lemon.calculate_profit(sale_price)
         print(f"-> [FINANCIALS] Lemon Fee: ${fee} | Net to You: ${profit}")
 
@@ -261,7 +278,7 @@ class Manage:
         print("PHASE 8: NEXUS SYNC")
         self.nexus.export_data({"name": character, "price": sale_price})
 
-        # 11. Final Save (Includes Stats/Skills for Website)
+        # 11. Final Save (Includes Physical Product Data)
         print("-" * 40)
         print("PHASE 9: SAVING")
         product_record = {
@@ -270,9 +287,14 @@ class Manage:
             "price": sale_price,
             "profit": profit,
             "market_trend": market_trend,
-            "art_url": art_path, # This is the relative path 'images/123.jpg'
+            "art_url": art_path,
             "stats": stats,
-            "skills": skills
+            "skills": skills,
+            
+            # NEW: Physical Product Mapping
+            "product_type": physical_product_name,   # e.g., "Unisex Hoodie"
+            "edition": edition_tier,                 # e.g., "1 of 100,000"
+            "product_desc": product_description       # e.g., "Comfortable, classic fit..."
         }
         self.memory.save_memory(product_record)
         print(f"--> [COMPLETE] Net Profit: ${profit} | Family Fund: ${family_total}")
