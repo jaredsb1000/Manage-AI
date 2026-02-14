@@ -90,5 +90,9 @@
     {
         "name": "Johnny Bravo",
         "price": 50
+    },
+    {
+        "name": "Fast Hedgehog",
+        "price": 25
     }
 ]
