@@ -1,3 +1,4 @@
+from art_engine import HyperRenderer
 import requests
 import json
 import random
