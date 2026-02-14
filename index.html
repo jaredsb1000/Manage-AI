@@ -3,74 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manage AI | Neural Sourcing Terminal</title>
+    <title>Manage AI | Neural Sourcing & Trading</title>
     <style>
-        /* DISCLAIMER BADGE */
-.disclaimer-badge {
-    background: #333; color: #888; font-size: 0.6rem;
-    padding: 2px 6px; border-radius: 2px; border: 1px dashed #555;
-    text-transform: uppercase; letter-spacing: 0.5px;
-    margin-top: 5px; display: inline-block;
-}
-        /* --- CORE VARIABLES --- */
+        /* --- CORE & VARIABLES --- */
         :root {
             --bg-deep: #050505;
-            --bg-panel: #0a0a0a;
+            --bg-glass: rgba(20, 20, 20, 0.7);
             --bg-card: #111111;
-            --neon-blue: #00f3ff;
-            --neon-pink: #ff00ff;
-            --neon-green: #00ff41;
-            --text-main: #e0e0e0;
-            --text-dim: #666;
-            --border: #333;
-            --font-mono: 'Courier New', Courier, monospace;
+            --bg-card-hover: #1f1f1f;
+            --accent: #00f3ff;
+            --accent-glow: rgba(0, 243, 255, 0.4);
+            --success: #00ff41;
+            --danger: #ff4d4d;
+            --trade: #ffa500; /* Orange for Trading */
+            --text-main: #ffffff;
+            --text-dim: #888888;
+            --border: #333333;
+            --font-mono: 'Courier New', monospace;
             --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        /* --- RESET & BASE --- */
+        * { box-sizing: border-box; outline: none; }
+
         body {
             background-color: var(--bg-deep);
             color: var(--text-main);
             font-family: var(--font-ui);
-            margin: 0;
             overflow-x: hidden;
+            cursor: default;
         }
 
-        /* CRT SCANLINE OVERLAY */
-        .scanlines {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
-            z-index: 9999;
+        /* --- UI ELEMENTS --- */
+        #scroll-progress {
+            position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); width: 0%; z-index: 9999; transition: width 0.1s;
         }
 
-        /* PARTICLE BACKGROUND CANVAS */
+        /* --- PARTICLES --- */
         #particle-canvas {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1; opacity: 0.3;
+            z-index: -1; opacity: 0.3; pointer-events: none;
         }
 
-        /* COMMAND LINE HEADER */
-        .cmd-header {
-            background: #000; color: var(--neon-green);
-            font-family: var(--font-mono); font-size: 0.75rem;
-            padding: 5px 20px; border-bottom: 1px solid var(--border);
-            display: flex; justify-content: space-between;
-        }
-
-        /* --- NAVIGATION --- */
+        /* --- NAV --- */
         nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 15px 20px; background: rgba(10,10,10,0.95);
-            backdrop-filter: blur(10px); border-bottom: 1px solid var(--border);
             position: sticky; top: 0; z-index: 100;
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 40px;
+            background: var(--bg-glass);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
+
         .brand {
-            font-family: var(--font-mono); font-size: 1.5rem;
-            color: var(--neon-blue); text-shadow: 0 0 10px var(--neon-blue);
-            font-weight: 900; letter-spacing: -1px; cursor: pointer;
-            position: relative;
+            font-family: var(--font-mono); font-size: 1.5rem; font-weight: 800;
+            color: #fff; letter-spacing: -1px; text-transform: uppercase; cursor: pointer;
+            text-shadow: 0 0 10px var(--accent-glow);
         }
         .brand:hover { animation: glitch 0.3s cubic-bezier(.25, .46, .45, .94) both infinite; }
         @keyframes glitch {
@@ -78,233 +65,160 @@
             60% { transform: translate(2px, 2px) } 80% { transform: translate(2px, -2px) } 100% { transform: translate(0) }
         }
 
-        .nav-controls { display: flex; gap: 10px; align-items: center; }
-        .search-box {
-            background: #111; border: 1px solid var(--border);
-            color: #fff; padding: 8px 12px;
-            font-family: var(--font-mono); font-size: 0.8rem;
-            width: 200px; transition: 0.3s;
-        }
-        .search-box:focus { border-color: var(--neon-blue); outline: none; width: 250px; }
+        .nav-controls { display: flex; gap: 15px; align-items: center; }
 
         .nav-btn {
-            background: transparent; border: 1px solid var(--neon-blue);
-            color: var(--neon-blue); padding: 8px 16px;
-            font-family: var(--font-mono); cursor: pointer; transition: 0.3s;
-            text-transform: uppercase; font-size: 0.8rem; position: relative; overflow: hidden;
+            background: transparent; border: 1px solid rgba(255,255,255,0.2);
+            color: #fff; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-family: var(--font-mono); font-size: 0.8rem; transition: 0.3s;
         }
-        .nav-btn:hover { background: var(--neon-blue); color: #000; }
-        .ripple { position: absolute; background: rgba(255,255,255,0.3); border-radius: 50%; transform: scale(0); animation: ripple-anim 0.6s linear; pointer-events: none; }
-        @keyframes ripple-anim { to { transform: scale(4); opacity: 0; } }
-
-        .menu-toggle { display: none; background: none; border: none; color: #fff; font-size: 1.5rem; cursor: pointer; }
-        @media(max-width: 768px) {
-            .nav-controls { display: none; flex-direction: column; position: absolute; top: 60px; left: 0; right: 0; background: #000; padding: 20px; border-bottom: 1px solid var(--border); }
-            .nav-controls.active { display: flex; }
-            .menu-toggle { display: block; }
-        }
-
-        .breadcrumbs {
-            padding: 10px 20px; font-size: 0.8rem; color: var(--text-dim);
-            font-family: var(--font-mono); border-bottom: 1px solid #222;
-        }
-
-        .status-bar {
-            display: flex; justify-content: space-between; padding: 0 20px;
-            font-family: var(--font-mono); font-size: 0.7rem; color: var(--neon-green);
-            margin-bottom: 10px;
-        }
+        .nav-btn:hover, .nav-btn.active { background: var(--accent); color: #000; box-shadow: 0 0 15px var(--accent-glow); }
 
         /* --- REELS --- */
         .reels-container {
-            display: flex; overflow-x: auto; gap: 20px; padding: 40px 20px;
-            scroll-behavior: smooth;
+            display: flex; overflow-x: auto; gap: 25px; padding: 40px 0;
+            scroll-behavior: smooth; margin-bottom: 60px;
         }
         .reels-container::-webkit-scrollbar { height: 8px; }
-        .reels-container::-webkit-scrollbar-thumb { background: var(--neon-blue); border-radius: 4px; }
+        .reels-container::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+        
         .reel-card {
-            flex: 0 0 250px; height: 350px;
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 4px; position: relative; cursor: pointer;
-            overflow: hidden; transition: 0.3s;
-            transform-style: preserve-3d; perspective: 1000px;
+            flex: 0 0 280px; height: 350px; background: var(--bg-card);
+            border-radius: 12px; overflow: hidden; position: relative;
+            border: 1px solid var(--border); transition: all 0.4s ease; cursor: pointer;
         }
-        .reel-img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+        .reel-card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+        .reel-img { width: 100%; height: 100%; object-fit: cover; transition: 0.4s; }
+        .reel-card:hover .reel-img { transform: scale(1.05); }
 
         /* --- SHOP GRID --- */
-        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px 80px 20px; }
         .section-header {
-            font-family: var(--font-mono); color: var(--neon-green);
-            margin-bottom: 20px; border-bottom: 1px solid var(--neon-green);
-            padding-bottom: 10px; display: flex; justify-content: space-between; align-items: center;
+            display: flex; justify-content: space-between; align-items: center;
+            margin-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px;
         }
-        
+        .section-title { color: var(--text-dim); font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; }
+
         .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
         
         .card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 8px; overflow: hidden; position: relative; cursor: pointer;
-            transition: transform 0.1s; transform-style: preserve-3d;
+            background: var(--bg-card); border-radius: 16px; overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.05); position: relative;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); cursor: pointer;
         }
-        .card:hover { z-index: 10; transform: scale(1.02); }
+        .card:hover { transform: translateY(-12px) scale(1.02); box-shadow: 0 30px 60px rgba(0,0,0,0.6); background: var(--bg-card-hover); border-color: var(--accent); }
         
-        /* RARITY GLOWS */
-        .card[data-rarity="ULTRA_RARE"] { border: 1px solid var(--neon-pink); box-shadow: 0 0 10px rgba(255, 0, 255, 0.2); }
-        .card[data-rarity="EPIC"] { border: 1px solid var(--neon-blue); box-shadow: 0 0 10px rgba(0, 243, 255, 0.2); }
-
-        /* UNIQUE EDITION GLOW */
-        .card[data-edition="unique"] {
-            border: 1px solid #ffd700;
-            box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-            position: relative;
-        }
-        .card[data-edition="unique"]::after {
-            content: "UNIQUE";
-            position: absolute; top: 10px; right: 10px;
-            background: #ffd700; color: #000;
-            font-size: 0.6rem; padding: 2px 6px; font-weight: bold;
-            border-radius: 2px; z-index: 5;
-        }
-
-        /* PRODUCT TYPE BADGE */
-        .product-type-badge {
-            position: absolute; top: 10px; left: 10px;
-            background: rgba(0,0,0,0.8); border: 1px solid var(--neon-blue);
-            color: var(--neon-blue); font-size: 0.6rem; padding: 3px 6px;
-            text-transform: uppercase; font-weight: bold; z-index: 5;
-            backdrop-filter: blur(4px); pointer-events: none;
-        }
-
-        .card-img-container { position: relative; overflow: hidden; height: 220px; }
-        .card-img { width: 100%; height: 100%; object-fit: cover; }
+        .card-img-container { height: 260px; background: #000; position: relative; overflow: hidden; }
+        .card-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.9; transition: 0.5s; }
         
-        /* MINT PROGRESS BAR */
-        .mint-progress {
-            position: absolute; bottom: 0; left: 0; height: 3px; background: var(--neon-green);
-            width: 0%; transition: width 0.5s;
+        .card-body { padding: 25px; }
+        .card-title { font-weight: 700; font-size: 1.1rem; margin: 0 0 10px 0; color: #fff; display: flex; justify-content: space-between; align-items: center; }
+        .card-actions { margin-top: 15px; display: flex; gap: 10px; }
+        
+        .action-btn {
+            flex: 1; padding: 8px 0; border: 1px solid var(--border); background: transparent; color: #fff; border-radius: 4px; font-size: 0.8rem; font-family: var(--font-mono); cursor: pointer; transition: 0.2s; text-transform: uppercase;
         }
+        .action-btn:hover { background: #222; border-color: #555; }
 
-        .card-body { padding: 20px; background: var(--bg-card); position: relative; z-index: 2; }
-        .card-title { font-family: var(--font-mono); font-size: 1rem; margin: 0 0 10px 0; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .card-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; }
-        .price { color: var(--neon-green); font-family: var(--font-mono); font-weight: bold; }
-
-        /* EDITION TEXT */
-        .edition-text {
-            font-size: 0.7rem; color: var(--text-dim);
-            font-family: var(--font-mono); margin-top: 5px; display: block;
+        .card-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid #222; }
+        .price { color: var(--success); font-family: var(--font-mono); font-weight: bold; font-size: 1.2rem; }
+        .badge { font-size: 0.75rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        .disclaimer-badge { display: inline-block; font-size: 0.65rem; color: #555; border: 1px solid #333; padding: 2px 6px; border-radius: 4px; margin-top: 8px; }
+        .market-badge {
+            display: inline-block; font-size: 0.7rem; color: var(--trade); border: 1px solid var(--trade);
+            padding: 3px 8px; border-radius: 4px; text-transform: uppercase; font-weight: bold; margin-left: 10px; animation: pulse-green 2s infinite;
         }
+        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(0, 255, 65, 0); } 50% { box-shadow:0 0 10px 0 rgba(0, 255, 65, 0.3); } 100% { box-shadow: 0 0 0 0 rgba(0, 255, 65, 0); } }
 
-        /* SKELETON LOADER */
-        .skeleton {
-            background: linear-gradient(90deg, #111 25%, #222 50%, #111 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
+        /* --- MARKETPLACE GRID --- */
+        .market-card {
+            border-color: var(--trade) !important;
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.2);
         }
-        @keyframes loading { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+        .market-card:hover {
+            border-color: #fff !important;
+            box-shadow: 0 0 25px rgba(255, 165, 0, 0.4);
+        }
+        .market-badge { display: block; text-align: center; margin-top: 10px; }
 
-        /* --- MODAL --- */
-        .modal {
-            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95); z-index: 1000;
-            justify-content: center; align-items: center; padding: 20px;
+        /* --- MODALS --- */
+        .modal-overlay {
+            display: none; position: fixed; top: 0; left:0; width:100%; height:100%;
+            background: rgba(0,0,0,0.85); backdrop-filter: blur(8px);
+            z-index: 1000; justify-content: center; align-items: center;
         }
         .modal-content {
-            width: 100%; max-width: 1100px; height: 90vh;
-            background: var(--bg-panel); border: 1px solid var(--border);
-            display: grid; grid-template-columns: 1.2fr 0.8fr;
-            overflow: hidden; box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            background: #1a1a1a; width: 1100px; max-width: 95%; height: 90vh;
+            border-radius: 20px; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr;
+            box-shadow: 0 0 80px rgba(0,0,0,0.8); border: 1px solid #333;
         }
-        .modal-left {
-            background: #000; position: relative; display: flex;
-            align-items: center; justify-content: center; overflow: hidden;
-        }
-        .modal-img {
-            max-width: 100%; max-height: 100%; object-fit: contain;
-            cursor: grab; transition: transform 0.1s;
-        }
-        .modal-img:active { cursor: grabbing; }
+        .modal-left { background: #000; position: relative; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+        .modal-img { max-width: 100%; max-height: 100%; object-fit: contain; transition: 0.5s; cursor: zoom-in; }
         
         .burn-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle, rgba(255,100,0,0.8) 0%, rgba(255,0,0,0) 70%);
-            opacity: 0; pointer-events: none; transition: opacity 0.5s;
-            mix-blend-mode: color-dodge; z-index: 5;
+            background: radial-gradient(circle, rgba(255,100,0,0.9) 0%, rgba(255,0,0,0) 70%);
+            mix-blend-mode: color-dodge; opacity: 0; pointer-events: none; z-index: 5; transition: opacity 0.5s;
         }
         .burn-active { animation: burnPulse 0.1s infinite; opacity: 1; }
         @keyframes burnPulse { 0% { transform: scale(1); filter: brightness(1); } 50% { transform: scale(1.05); filter: brightness(1.5) contrast(1.2); } 100% { transform: scale(1); filter: brightness(1); } }
 
-        .modal-right { padding: 30px; overflow-y: auto; display: flex; flex-direction: column; border-left: 1px solid var(--border); }
+        .modal-right { padding: 40px; overflow-y: auto; display: flex; flex-direction: column; }
+        .close-btn {
+            position: absolute; top: 25px; right: 25px; background: #222; color: #fff; border: 1px solid #444;
+            width: 40px; height: 40px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center;
+        }
+        .modal-title { color: var(--accent); font-family: var(--font-mono); font-size: 2rem; margin: 0 0 10px 0; text-transform: uppercase; }
         
-        .close-modal {
-            position: absolute; top: 20px; right: 20px;
-            background: rgba(0,0,0,0.5); border: 1px solid #fff; color: #fff;
-            width: 30px; height: 30px; border-radius: 50%; cursor: pointer; z-index: 20;
-            display: flex; align-items: center; justify-content: center; font-weight: bold;
-            pointer-events: auto;
-        }
+        .btn-row { display: flex; gap: 15px; margin-top: 30px; }
+        .btn { flex: 1; padding: 15px; border: none; border-radius: 8px; font-weight: 700; cursor: pointer; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; transition: 0.3s; position: relative; overflow: hidden; }
+        .btn-primary { background: var(--accent); color: #000; box-shadow: 0 0 15px rgba(0, 243, 255, 0.3); }
+        .btn-primary:hover { background: #fff; box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); }
+        .btn-trade { background: var(--trade); color: #000; border: none; }
+        .btn-trade:hover { background: #fff; box-shadow: 0 0 25px rgba(255, 165, 0, 0.5); }
+        .btn-burn { background: linear-gradient(45deg, #ff4d4d, #f9cb28); color: #000; border: none; }
 
-        .sparkline { width: 100px; height: 30px; stroke: var(--neon-green); fill: none; stroke-width: 2; }
+        /* --- CUSTOMIZER --- */
+        .customizer-overlay {
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95); z-index: 2000; flex-direction: column; align-items: center; justify-content: center;
+        }
+        .customizer-container {
+            background: #111; border: 1px solid #333; width: 90%; max-width: 1000px; padding: 30px;
+            display: flex; flex-direction: column; gap: 20px; border-radius: 16px;
+            box-shadow: 0 0 50px rgba(0,229,255,0.1);
+        }
+        .customizer-workspace {
+            height: 500px; background: #000; border-radius: 8px; position: relative;
+            display: flex; align-items: center; justify-content: center; overflow: hidden;
+            background-image: radial-gradient(#222 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .draggable-art {
+            position: absolute; cursor: grab; user-select: none; transition: transform 0.1s;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6);
+        }
+        .draggable-art:active { cursor: grabbing; }
+        
+        .product-mockup {
+            position: absolute; border: 2px dashed #444; display: flex; align-items: center; justify-content: center;
+            color: #666; font-weight: bold; z-index: 5; pointer-events: none; text-transform: uppercase; letter-spacing: 2px;
+        }
+        .mock-shirt { width: 320px; height: 380px; border-radius: 20px 20px 0 0; clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 100%, 0% 100%, 0% 20%); }
+        .mock-mug { width: 260px; height: 320px; border-radius: 10px 10px 40px 40px; border-bottom: 6px solid #333; }
+        .mock-canvas { width: 340px; height: 340px; border: 10px solid #222; }
 
-        .lore-box {
-            background: #000; border-left: 2px solid var(--neon-blue);
-            padding: 10px; font-family: var(--font-mono); font-size: 0.8rem;
-            color: #aaa; margin: 10px 0; line-height: 1.4; min-height: 60px;
-        }
+        .controls { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        .control-btn { background: transparent; border: 1px solid #444; color: #fff; padding: 10px 25px; cursor: pointer; border-radius: 30px; font-size: 0.9rem; transition: 0.3s; }
+        .control-btn:hover, .control-btn.active { background: #fff; color: #000; border-color: #fff; }
 
-        .sound-wave { display: flex; gap: 2px; align-items: flex-end; height: 15px; }
-        .bar { width: 3px; background: var(--neon-blue); animation: wave 1s infinite ease-in-out; }
-        .bar:nth-child(2) { animation-delay: 0.1s; } .bar:nth-child(3) { animation-delay: 0.2s; }
-        @keyframes wave { 0%, 100% { height: 2px; } 50% { height: 15px; } }
+        .toast-container { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 3000; }
+        .toast {
+            background: #222; color: #fff; padding: 12px 24px; border-radius: 8px; border: 1px solid #444;
+            margin-top: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); animation: slideUp 0.3s ease; display: flex; align-items: center; gap: 10px;
+        }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
 
-        .terminal-chat {
-            background: #000; border: 1px solid var(--border); padding: 15px;
-            font-family: var(--font-mono); font-size: 0.8rem; height: 200px;
-            overflow-y: auto; margin-top: auto; display: flex; flex-direction: column;
-        }
-        .chat-input-area { display: flex; margin-top: 10px; }
-        .chat-input {
-            flex: 1; background: #111; border: 1px solid #333; color: #fff;
-            padding: 8px; font-family: var(--font-mono);
-        }
-        .chat-send {
-            background: var(--neon-blue); border: none; color: #000;
-            padding: 0 15px; cursor: pointer; font-weight: bold;
-        }
-
-        .back-to-top {
-            position: fixed; bottom: 20px; right: 20px;
-            background: var(--neon-blue); color: #000; width: 40px; height: 40px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            cursor: pointer; opacity: 0; transition: 0.3s; pointer-events: none;
-            font-weight: bold; z-index: 90;
-        }
-        .back-to-top.visible { opacity: 1; pointer-events: all; }
-
-        .fps-counter {
-            position: fixed; bottom: 10px; left: 10px; font-family: var(--font-mono);
-            font-size: 0.7rem; color: #333; pointer-events: none;
-        }
-
-        .skill-tag {
-            background: #21262d; border: 1px solid #30363d; padding: 4px 8px;
-            border-radius: 4px; font-size: 0.75rem; position: relative; cursor: help;
-        }
-        .skill-tag:hover::after {
-            content: attr(data-desc);
-            position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%);
-            background: #333; color: #fff; padding: 5px 10px; font-size: 0.7rem;
-            white-space: nowrap; border-radius: 4px; pointer-events: none;
-            margin-bottom: 5px; z-index: 10;
-        }
-
-        .hidden { display: none !important; }
-        .btn-action {
-            background: var(--neon-blue); border: none; color: #000; padding: 10px;
-            font-weight: bold; cursor: pointer; margin-top: 10px; text-transform: uppercase; font-size: 0.8rem;
-        }
-
-        @media(max-width: 900px) {
+        @media(max-width: 800px) {
             .modal-content { grid-template-columns: 1fr; height: 95vh; overflow-y: auto; }
             .modal-left { height: 300px; }
         }
@@ -312,463 +226,420 @@
 </head>
 <body>
 
-    <!-- CANVAS PARTICLES -->
+    <!-- SCROLL PROGRESS -->
+    <div id="scroll-progress"></div>
+    <!-- PARTICLES -->
     <canvas id="particle-canvas"></canvas>
-    <!-- SCANLINES -->
-    <div class="scanlines"></div>
-    <!-- FPS -->
-    <div class="fps-counter" id="fps">60 FPS</div>
-    <!-- BACK TO TOP -->
-    <div class="back-to-top" onclick="window.scrollTo(0,0)">^</div>
-    
-    <!-- COMMAND HEADER -->
-    <div class="cmd-header">
-        <span id="cmd-text">> INITIALIZING NEURAL INTERFACE...</span>
-        <span>V.18.0</span>
-    </div>
 
     <!-- NAV -->
     <nav>
-        <div class="brand" onclick="showHome()">MANAGE_AI</div>
-        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-        <div class="nav-controls" id="nav-controls">
+        <div class="brand" onclick="showHome()">Manage AI</div>
+        <div class="nav-controls">
             <button class="nav-btn" onclick="showHome()">Reels</button>
             <button class="nav-btn" onclick="showShop()">Sourcing</button>
-            <button class="nav-btn" onclick="randomItem()">Surprise Me</button>
-            <input type="text" class="search-box" placeholder="FIND ASSET..." onkeyup="filterGrid(this.value)">
-            <select class="search-box" style="width:auto;" onchange="sortGrid(this.value)">
-                <option value="newest">Newest</option>
-                <option value="price_low">Price: Low</option>
-                <option value="price_high">Price: High</option>
-            </select>
+            <button class="nav-btn" onclick="showMarket()">Market</button>
         </div>
     </nav>
 
-    <!-- BREADCRUMBS -->
-    <div class="breadcrumbs" id="breadcrumbs">HOME</div>
-
-    <!-- STATUS BAR -->
-    <div class="status-bar">
-        <span>🟢 SYSTEM ONLINE</span>
-        <span>USERS ONLINE: <span id="online-count">842</span></span>
-        <span>⏱ NEXT MINT: <span id="mint-timer">04:59:12</span></span>
-    </div>
-
     <!-- VIEWS -->
-    <div id="view-home" class="view">
-        <div class="container">
-            <div class="section-header">
-                <span>// TOP TIER ACQUISITIONS</span>
-                <span style="font-size:0.7rem; color:var(--neon-pink);">LIVE FEED</span>
-            </div>
-            <div id="reels-container" class="reels-container"></div>
+    <div id="view-home" class="container">
+        <div class="section-header">
+            <span class="section-title">// Top Tier Acquisitions</span>
+            <span style="color:var(--accent); font-size:0.8rem;">LIVE FEED</span>
+        </div>
+        <div id="reels-container" class="reels-container"></div>
+    </div>
+
+    <div id="view-shop" class="container hidden">
+        <div class="section-header">
+            <span class="section-title">// Full Inventory Database</span>
+            <span id="shop-count">Loading...</span>
+        </div>
+        <div id="shop-grid" class="grid">
+            <!-- JS loads cards here -->
         </div>
     </div>
 
-    <div id="view-shop" class="view hidden">
-        <div class="container">
-            <div class="section-header">
-                <span>// FULL INVENTORY DATABASE</span>
-                <span id="item-count">LOADING...</span>
-            </div>
-            <div id="shop-grid" class="grid"></div>
+    <div id="view-market" class="container hidden">
+        <div class="section-header">
+            <span class="section-title">// Peer-to-Peer Marketplace</span>
+            <span id="market-count">Loading...</span>
+        </div>
+        <div id="market-grid" class="grid">
+            <!-- JS loads market items here -->
         </div>
     </div>
 
-    <!-- MODAL -->
-    <div id="product-modal" class="modal" onclick="closeModal(event)">
+    <!-- PRODUCT DETAIL / TRADE MODAL -->
+    <div id="product-modal" class="modal-overlay" onclick="closeModal(event)">
+        <button class="close-btn" onclick="closeModalDirect()">×</button>
         <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="close-modal" onclick="closeModalDirect()">×</button>
-            
             <div class="modal-left">
                 <div id="burn-effect" class="burn-overlay"></div>
-                <img id="modal-img" src="" class="modal-img" onmousedown="startZoom(event)">
+                <img id="modal-img" src="" class="modal-img">
             </div>
-            
             <div class="modal-right">
-                <div style="display:flex; justify-content:space-between; align-items:start;">
-                    <h2 id="modal-title" style="color:var(--neon-blue); font-family:var(--font-mono); margin:0; width:70%;">ASSET NAME</h2>
-                    <svg class="sparkline" viewBox="0 0 100 30">
-                        <path id="sparkline-path" d="M0,15 Q50,0 100,15" stroke="#00ff41" fill="none" stroke-width="2"/>
-                    </svg>
+                <h2 id="modal-title" class="modal-title">ASSET NAME</h2>
+                <div class="disclaimer-badge">Parody / Fan Art</div>
+                
+                <div style="color:var(--success); font-size:2rem; font-weight:bold; margin-bottom:10px;" id="modal-price">$0.00</div>
+                
+                <p style="color:#aaa; line-height:1.6; margin-bottom:30px;">
+                    Unique generative asset. Includes digital file and physical production rights.
+                </p>
+
+                <div class="btn-row">
+                    <button class="btn btn-burn" onclick="triggerBurn()">🔥 Burn Receipt</button>
+                    <button class="btn btn-secondary" onclick="openCustomizer()">👕 Preview Fit</button>
                 </div>
                 
-                <div style="display:flex; gap:10px; margin-bottom:15px;">
-                    <span id="modal-rarity" style="background:#333; padding:2px 8px; font-size:0.7rem; color:#fff;"></span>
-                    <!-- EDITION BADGE -->
-                    <span id="edition-badge" style="border:1px solid #333; padding:2px 8px; font-size:0.7rem; color:var(--neon-blue);"></span>
-                    <span id="modal-price" style="color:var(--neon-green); font-family:var(--font-mono); font-weight:bold; margin-left:auto; font-size:1.2rem;"></span>
-                </div>
-
-                <!-- PHYSICAL PRODUCT DESCRIPTION -->
-                <div style="font-size:0.8rem; color:#888; margin-bottom:15px; border-bottom:1px solid #222; padding-bottom:10px;">
-                    <strong style="color:var(--neon-blue);">PHYSICAL FORM:</strong> <span id="product-desc"></span>
-                </div>
-
-                <div id="lore-text" class="lore-box">Initializing backstory analysis...</div>
-                <button class="btn-action" onclick="generateLore()" style="width:100%; padding:5px;">GENERATE LORE</button>
-
-                <div style="margin:15px 0;">
-                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>STR</span><span id="val-str"></span></div>
-                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-str" style="height:100%; background:var(--neon-blue); width:0%; transition:1s;"></div></div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>INT</span><span id="val-int"></span></div>
-                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-int" style="height:100%; background:var(--neon-pink); width:0%; transition:1s;"></div></div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>DEX</span><span id="val-dex"></span></div>
-                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-dex" style="height:100%; background:var(--neon-green); width:0%; transition:1s;"></div></div>
-                </div>
-
-                <div id="modal-skills" style="display:flex; gap:5px; flex-wrap:wrap; margin-bottom:15px;"></div>
-
-                <div style="display:flex; gap:10px; margin-top:10
-                        <!-- BREADCRUMBS -->
-    <div class="breadcrumbs" id="breadcrumbs">HOME</div>
-
-    <!-- STATUS BAR -->
-    <div class="status-bar">
-        <span>🟢 SYSTEM ONLINE</span>
-        <span>USERS ONLINE: <span id="online-count">842</span></span>
-        <span>⏱ NEXT MINT: <span id="mint-timer">04:59:12</span></span>
-    </div>
-
-    <!-- VIEWS -->
-    <div id="view-home" class="view">
-        <div class="container">
-            <div class="section-header">
-                <span>// TOP TIER ACQUISITIONS</span>
-                <span style="font-size:0.7rem; color:var(--neon-pink);">LIVE FEED</span>
+                <button class="btn btn-trade" onclick="listForTrade()">📤 List for Trade</button>
+                <button class="btn btn-primary" style="width:100%; margin-top:20px;">Purchase Asset</button>
             </div>
-            <div id="reels-container" class="reels-container"></div>
         </div>
     </div>
 
-    <div id="view-shop" class="view hidden">
-        <div class="container">
-            <div class="section-header">
-                <span>// FULL INVENTORY DATABASE</span>
-                <span id="item-count">LOADING...</span>
-            </div>
-            <div id="shop-grid" class="grid"></div>
-        </div>
-    </div>
-
-    <!-- MODAL -->
-    <div id="product-modal" class="modal" onclick="closeModal(event)">
+    <!-- TRADE MODAL -->
+    <div id="trade-modal" class="modal-overlay" onclick="closeTrade(event)">
+        <button class="close-btn" onclick="closeTradeDirect()">×</button>
         <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="close-modal" onclick="closeModalDirect()">×</button>
-            
             <div class="modal-left">
-                <div id="burn-effect" class="burn-overlay"></div>
-                <img id="modal-img" src="" class="modal-img" onmousedown="startZoom(event)">
+                <img id="trade-img-1" class="modal-img" style="opacity: 0.5; filter: grayscale(100%);">OFFER</div>
+                <div style="position:absolute; top: 50%; left: 50%; font-size: 40px; color: #555;">VS</div>
+                <img id="trade-img-2" class="modal-img" style="opacity: 0.5; filter: grayscale(100%); target="_blank">WANT</div>
             </div>
-            
             <div class="modal-right">
-                <div style="display:flex; justify-content:space-between; align-items:start;">
-                    <h2 id="modal-title" style="color:var(--neon-blue); font-family:var(--font-mono); margin:0; width:70%;">ASSET NAME</h2>
-                    <svg class="sparkline" viewBox="0 0 100 30">
-                        <path id="sparkline-path" d="M0,15 Q50,0 100,15" stroke="#00ff41" fill="none" stroke-width="2"/>
-                    </svg>
-                </div>
+                <h2 style="color:var(--accent); font-family:var(--font-mono); font-size:1.5rem;">CONFIRM TRADE</h2>
                 
-                <div style="display:flex; gap:10px; margin-bottom:15px;">
-                    <span id="modal-rarity" style="background:#333; padding:2px 8px; font-size:0.7rem; color:#fff;"></span>
-                    <!-- EDITION BADGE -->
-                    <span id="edition-badge" style="border:1px solid #333; padding:2px 8px; font-size:0.7rem; color:var(--neon-blue);"></span>
-                    <span id="modal-price" style="color:var(--neon-green); font-family:var(--font-mono); font-weight:bold; margin-left:auto; font-size:1.2rem;"></span>
+                <p>You are about to trade <strong style="color:var(--trade);">OFFER:</strong></p>
+                <div class="card" style="margin-bottom:20px; cursor:pointer; border:1px solid #444; padding:15px; background:#111;" onclick="executeTrade()">
+                    <div style="font-weight:bold; color:#fff;" id="trade-name-1">Name</div>
+                    <div style="color:var(--text-dim);">Value: $<span id="trade-price-1">0.00</span></div>
                 </div>
 
-                <!-- PHYSICAL PRODUCT DESCRIPTION -->
-                <div style="font-size:0.8rem; color:#888; margin-bottom:15px; border-bottom:1px solid #222; padding-bottom:10px;">
-                    <strong style="color:var(--neon-blue);">PHYSICAL FORM:</strong> <span id="product-desc"></span>
+                <p>For:</p>
+                <div class="card" style="cursor:pointer; border:1px solid var(--accent); padding:15px; background: rgba(0, 243, 255, 0.1);">
+                    <div style="font-weight:bold; color:#fff;" id="trade-name-2">Name</div>
+                    <div style="color:var(--text-dim);">Value: $<span id="trade-price-2">0.00</span></div>
                 </div>
 
-                <div id="lore-text" class="lore-box">Initializing backstory analysis...</div>
-                <button class="btn-action" onclick="generateLore()" style="width:100%; padding:5px;">GENERATE LORE</button>
-
-                <div style="margin:15px 0;">
-                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>STR</span><span id="val-str"></span></div>
-                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-str" style="height:100%; background:var(--neon-blue); width:0%; transition:1s;"></div></div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>INT</span><span id="val-int"></span></div>
-                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-int" style="height:100%; background:var(--neon-pink); width:0%; transition:1s;"></div></div>
-                    <div style="display:flex; justify-content:space-between; font-size:0.8rem; margin-bottom:5px; color:#fff;"><span>DEX</span><span id="val-dex"></span></div>
-                    <div style="height:4px; background:#333; margin-bottom:10px;"><div id="bar-dex" style="height:100%; background:var(--neon-green); width:0%; transition:1s;"></div></div>
-                </div>
-
-                <div id="modal-skills" style="display:flex; gap:5px; flex-wrap:wrap; margin-bottom:15px;"></div>
-
-                <div style="display:flex; gap:10px; margin-top:10px;">
-                    <button class="btn-action" style="flex:1;" onclick="triggerBurn()">PREVIEW BURN</button>
-                    <button class="btn-action" style="background:#333; color:#fff;" onclick="downloadImage()">DL</button>
-                    <button class="btn-action" style="background:#333; color:#fff;" onclick="copyLink()">SHARE</button>
-                </div>
-
-                <div style="margin-top:20px; flex-grow:1; display:flex; flex-direction:column;">
-                    <div style="color:var(--text-dim); font-size:0.7rem; margin-bottom:5px; font-family:var(--font-mono); display:flex; justify-content:space-between;">
-                        <span>// SECURE COMMS</span>
-                        <div class="sound-wave"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
-                    </div>
-                    <div id="chat-box" class="terminal-chat"></div>
-                    <div class="chat-input-area">
-                        <input type="text" id="chat-input" class="chat-input" placeholder="Transmit...">
-                        <button class="chat-send" onclick="postComment()">></button>
-                    </div>
-                </div>
+                <button class="btn btn-trade" style="width:100%; margin-top:30px;">CONFIRM TRADE</button>
             </div>
         </div>
     </div>
 
+    <!-- CUSTOMIZER OVERLAY -->
+    <div id="customizer" class="customizer-overlay">
+        <div class="customizer-container">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h3 style="font-size:1.2rem; color:#fff;">Product Placement Preview</h3>
+                <button class="close-btn" style="position:static;" onclick="closeCustomizer()">×</button>
+            </div>
+            
+            <div class="customizer-workspace" id="customizer-workspace">
+                <img id="custom-art" class="draggable-art" src="" style="width: 150px; top: 100px; left: 100px; display:none;">
+                <div id="product-mockup" class="product-mockup mock-shirt">HOODIE</div>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn active" onclick="setProduct('hoodie')">Hoodie</button>
+                <button class="control-btn" onclick="setProduct('mug')">Magento; Mug</button>
+                <div style="flex-grow:1"></div> <!-- Spacer -->
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toast-container"></div>
+
+</body>
+        </html>
     <script>
-        // --- PARTICLE SYSTEM ---
+        // --- PARTICLES ---
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
         let particles = [];
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = window.innerWidth; canvas.height = window.innerHeight;
 
         class Particle {
-            constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.vx = (Math.random() - 0.5) * 0.5; this.vy = (Math.random() - 0.5) * 0.5; this.size = Math.random() * 2; }
-            update() { this.x += this.vx; this.y += this.vy; if(this.x < 0 || this.x > canvas.width) this.vx *= -1; if(this.y < 0 || this.y > canvas.height) this.vy *= -1; }
-            draw() { ctx.fillStyle = '#00f3ff'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); }
-        }
-        for(let i=0; i<50; i++) particles.push(new Particle());
-        
-        function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            particles.forEach(p => { p.update(); p.draw(); });
-            for(let i=0; i<particles.length; i++) {
-                for(let j=i; j<particles.length; j++) {
-                    const dx = particles[i].x - particles[j].x;
-                    const dy = particles[i].y - particles[j].y;
-                    const dist = Math.sqrt(dx*dx + dy*dy);
-                    if(dist < 100) { ctx.strokeStyle = `rgba(0, 243, 255, ${1 - dist/100})`; ctx.lineWidth = 0.5; ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); }
-                }
-            }
-            requestAnimationFrame(animateParticles);
-        }
-        animateParticles();
-        window.addEventListener('resize', () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; });
+            constructor() { this.x = Math.random() * canvas.width; this.y = class="nav-controls">
+            <button class="nav-btn" onclick="showHome()">Reels</button>
+            <button class="nav-btn" onclick="showShop()">Sourcing</button>
+            <button class="nav-btn" onclick="showMarket()">Market</button>
+        </div>
+    </nav>
 
+    <!-- VIEWS -->
+    <div id="view-home" class="container">
+        <div class="section-header">
+            <span class="section-title">// Top Tier Acquisitions</span>
+            <span style="color:var(--accent); font-size:0.8rem;">LIVE FEED</span>
+        </div>
+        <div id="reels-container" class="reels-container"></div>
+    </div>
+
+    <div id="view-shop" class="container hidden">
+        <div class="section-header">
+            <span class="section-title">// Full Inventory Database</span>
+            <span id="shop-count">Loading...</span>
+        </div>
+        <div id="shop-grid" class="grid"></div>
+    </div>
+
+    <div id="view-market" class="container hidden">
+        <div class="section-header">
+            <span class="section-title">// Peer-to-Peer Marketplace</span>
+            <span id="market-count">Loading...</span>
+        </div>
+        <div id="market-grid" class="grid"></div>
+    </div>
+
+    <!-- PRODUCT DETAIL / TRADE MODAL -->
+    <div id="product-modal" class="modal-overlay" onclick="closeModal(event)">
+        <button class="close-btn" onclick="closeModalDirect()">×</button>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-left">
+                <div id="burn-effect" class="burn-effect"></div>
+                <img id="modal-img" src="" class="modal-img">
+            </div>
+            <div class="modal-right">
+                <h2 id="modal-title" class="modal-title">ASSET NAME</h2>
+                <div class="disclaimer-badge">Parody / Fan Art</div>
+                
+                <div style="color:var(--success); font-size:2rem; font-weight:bold; margin-bottom:10px;" id="modal-price">$0.00</div>
+                
+                <p style="color:#aaa; line-height:1.6; margin-bottom:30px;">
+                    Unique generative asset. Includes digital file and physical production rights via Printful.
+                    Burn receipt to spawn character in-game.
+                </p>
+
+                <div class="btn-row">
+                    <button class="btn btn-burn" onclick="triggerBurn()">🔥 Burn Receipt</button>
+                    <button class="btn btn-secondary" onclick="openCustomizer()">👕 Preview Fit</button>
+                </div>
+                
+                <!-- THE NEW TRADING BUTTON -->
+                <button class="btn btn-trade" onclick="listForTrade()">📤 List for Trade</button>
+                
+                <button class="btn btn-primary" style="width:100%; margin-top:20px;">Purchase Asset</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRADE MODAL -->
+    <div id="trade-modal" class="modal-overlay" onclick="closeTrade(event)">
+        <button class="close-btn" onclick="closeTradeDirect()">×</button>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-left">
+                <img id="trade-img-1" class="modal-img" style="opacity: 0.5; filter: grayscale(100%);">OFFER</div>
+                <div style="position:absolute; top: 50%; left: 50%; font-size: 40px; color: #555;">VS</div>
+                <img id="trade-img-2" class="modal-img" style="opacity: 0.5; filter: </div>
+            </div>
+            <div class="modal-right">
+                <h2 style="color: var(--accent); font-family: var(--font-mono); font-size: 1.5rem;">CONFIRM TRADE</h2>
+                
+                <p>Confirm trade details below:</p>
+                
+                <div class="card" style="cursor: pointer; border: 1px solid #333; padding: 15px; background: #111; margin-bottom: 20px;">
+                    <div style="font-weight:bold; color: #fff;" id="trade-name-1">Name</div>
+                    <div style="color: #888; margin-top: 5px;">Value: $<span id="trade-price-1">0.00</span></div>
+                </div>
+
+                <div class="card" style="cursor: pointer; border: 1px solid var(--accent); padding: 15px; background: rgba(0, 243, 255, 0.1);">
+                    <div style="font-weight:bold; color: #fff;" id="trade-name-2">Name</div>
+                    <div style="color: #888; margin-top: 5px;">Value: $<span id="trade-price-2">0.00</span></div>
+                </div>
+
+                <button class="btn btn-trade" style="width:100%; margin-top: 20px;">CONFIRM TRADE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUSTOMIZER OVERLAY -->
+    <div id="customizer" class="customizer-overlay">
+        <div class="customizer-container">
+            <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h3 style="font-size:1.2rem; color:#fff;">Product Placement Preview</h3>
+                <button class="close-btn" style="position:static;" onclick="closeCustomizer()">×</button>
+            </div>
+            
+            <div class="customizer-workspace" id="customizer-workspace">
+                <img id="custom-art" class="draggable-art" src="" style="width: 100px; top: 50px; left: 50px; display:none;">
+                <div id="product-mockup" class="product-mockup mock-shirt">HOODIE</div>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn active" onclick="setProduct('hoodie')">Hoodie</button>
+                <div style="flex-grow:1;"></div>
+                <button class="close-btn" onclick="closeCustomizer()">×</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toast-container"></div>
+</body>
+</html>
+
+    <script>
         // --- GLOBAL STATE ---
-        let allItems = [];
+        let allItems = []; 
+        let marketListings = [];
         let currentItem = null;
 
-        const cmds = ["CONNECTING TO NEURAL NET...", "SYNCING LEDGER...", "VERIFYING ASSETS...", "ENCRYPTING CHANNEL..."];
-        let cmdIdx = 0;
-        setInterval(() => { document.getElementById('cmd-text').innerText = "> " + cmds[cmdIdx]; cmdIdx = (cmdIdx + 1) % cmds.length; }, 3000);
-
-        setInterval(() => { document.getElementById('online-count').innerText = 800 + Math.floor(Math.random() * 50); }, 5000);
-        let time = 17999;
-        setInterval(() => {
-            time--;
-            const h = Math.floor(time / 3600).toString().padStart(2, '0');
-            const m = Math.floor((time % 3600) / 60).toString().padStart(2, '0');
-            const s = (time % 60).toString().padStart(2, '0');
-            document.getElementById('mint-timer').innerText = `${h}:${m}:${s}`;
-        }, 1000);
-
-        // --- DATA LOGIC ---
         async function loadData() {
             const res = await fetch('database.json?nocache=' + new Date().getTime());
             const data = await res.json();
             allItems = data.inventory || [];
-            document.getElementById('item-count').innerText = allItems.length + " ASSETS FOUND";
-            return allItems;
+            document.getElementById('shop-count').innerText = allItems.length + " ASSETS FOUND";
+            renderGrid(allItems);
         }
 
-        function getImg(url) { return (!url || url === 'https://placehold.co/600x600/000/fff?text=NO+DATA') ? 'https://placehold.co/600x600/111/333?text=NO+IMAGE' : (url.startsWith('http') ? url : 'images/' + url); }
+        function getImg(url) { 
+            return (!url || url === 'https://part 2: using my own code and  it is not some wrapper." {
+            ? 'https://part 2: https://placehold.co/600x600/111/333?text=NO+IMAGE' 
+            : (url.startsWith('http') ? url : 'images/' + url); 
+        }
 
         async function loadReels() {
-            const container = document.getElementById('reels-container');
+            const container = document.getElementById('section-title');
             const items = await loadData();
             const topItems = items.filter(i => i.rarity !== 'NORMAL').slice(-5);
-            container.innerHTML = topItems.map(item => `
+            document.getElementById('reels-container').innerHTML = topItems.map(item => `
                 <div class="reel-card" onclick='openModal(${JSON.stringify(item)})'>
-                    <img src="${getImg(item.art_url)}" class="reel-img" loading="lazy">
+                    <img src="${getImg(item.art_url)}" class="reel-img">
                 </div>
             `).join('');
         }
 
-        async function loadShop() {
-            const grid = document.getElementById('shop-grid');
-            grid.innerHTML = Array(6).fill('<div class="card"><div class="card-img-container skeleton"></div><div class="card-body"><div class="skeleton" style="height:20px; margin-bottom:10px;"></div><div class="skeleton" style="width:50px; height:15px;"></div></div></div>').join('');
-            const items = await loadData();
-            renderGrid(items);
-        }
-
-        function filterGrid(query) {
-            const filtered = allItems.filter(i => i.name.toLowerCase().includes(query.toLowerCase()));
-            renderGrid(filtered);
-        }
-        function sortGrid(method) {
-            let sorted = [...allItems].reverse();
-            if(method === 'price_low') sorted.sort((a,b) => a.price - b.price);
-            if(method === 'price_high') sorted.sort((a,b) => b.price - a.price);
-            renderGrid(sorted);
-        }
-
         function renderGrid(items) {
             const grid = document.getElementById('shop-grid');
-            grid.innerHTML = items.map(item => {
-                const editionType = (item.edition && item.edition.includes("1 of 1")) ? "unique" : "standard";
-                const productType = item.product_type || 'Digital Asset';
-                const editionText = item.edition || 'Open Edition';
-                
-                return `
-                <div class="card" 
-                     data-rarity="${item.rarity}" 
-                     data-edition="${editionType}"
-                     onclick='openModal(${JSON.stringify(item)})' 
-                     onmousemove="handleTilt(event, this)" 
-                     onmouseleave="resetTilt(this)">
-                    
+            grid.innerHTML = items.map(item => `
+                <div class="card" onclick='openModal(${JSON.stringify(item)})'>
                     <div class="card-img-container">
-                        <img src="${getImg(item.art_url)}" class="card-img" loading="lazy">
-                        <div class="mint-progress" style="width:${Math.random()*100}%"></div>
-                        <div class="product-type-badge">${productType}</div>
-                    </div>
-                    
-                                        <div class="card-body">
+                        <img src="${getImg(item.art_url)" class="card-img" loading="lazy">
+                    <div class="product-type-badge">${item.product_type || 'Digital Asset'}</div>
+                    <!-- 39. HOT BADGE -->
+                    ${item.rarity === 'ULTRA_RARE' ? '<div class="hot-badge">HOT</div>' : ''}
+                </div>
+                    <div class="card-body">
                         <div class="card-title">${item.name}</div>
-                        <!-- NEW DISCLAIMER BADGE -->
                         <div class="disclaimer-badge">Parody / Fan Art</div>
-                        
-                        <span class="edition-text">${editionText}</span>
                         <div class="card-meta">
-                            <span style="font-size:0.7rem; color:#888;">${item.rarity}</span>
+                            <span class="badge">${item.rarity}</span>
                             <span class="price">$${item.price}</span>
                         </div>
                     </div>
-            `}).join('');
+                </div>
+            `).join('');
         }
 
-        function handleTilt(e, card) {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = ((y - centerY) / centerY) * -10;
-            const rotateY = ((x - centerX) / centerX) * 10;
-            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-        }
-        function resetTilt(card) { card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)'; }
-
-        function showHome() {
-            document.getElementById('view-home').classList.remove('hidden');
-            document.getElementById('view-shop').classList.add('hidden');
-            document.getElementById('breadcrumbs').innerText = "HOME";
+        /* --- NAVIGATION --- */
+        function showHome() { 
+            document.getElementById('view-home').classList.remove('hidden'); 
+            document.getElementById('view-shop').classList.add('hidden'); 
+            document.getElementById('view-market').classList.add('hidden'); 
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.nav-btn')[0].classList.add('active');
             loadReels();
         }
-        function showShop() {
-            document.getElementById('view-home').classList.add('hidden');
-            document.getElementById('view-shop').classList.remove('hidden');
-            document.getElementById('breadcrumbs').innerText = "HOME > SOURCING";
-            loadShop();
+        function showShop() { 
+            document.getElementById('view-home').classList.add('hidden'); 
+            document.getElementById('view-shop').classList.remove('hidden'); 
+            document.getElementById('view-market').classList.add('hidden');
+            document.querySelectorAll('.nav-btn')[1].classList.add('active');
+            document.querySelectorAll('.nav-btn')[0].classList.remove('active');
+            renderGrid(allItems);
         }
-        function toggleMenu() { document.getElementById('nav-controls').classList.toggle('active'); }
-        async function randomItem() {
-            const items = await loadData();
-            const item = items[Math.floor(Math.random() * items.length)];
-            openModal(item);
+        function showMarket() {
+            document.getElementById('view-shop').classList.add('hidden');
+            document.getElementById('view-market').classList.remove('hidden');
+            document.getElementById('view-home').classList.add('hidden');
+            renderMarketplace();
         }
 
+        /* --- MODAL LOGIC --- */
         function openModal(item) {
             currentItem = item;
-            const m = document.getElementById('product-modal');
             document.getElementById('modal-img').src = getImg(item.art_url);
             document.getElementById('modal-title').innerText = item.name.toUpperCase();
-            document.getElementById('modal-rarity').innerText = item.rarity;
-            document.getElementById('modal-price').innerText = '$' + item.price;
-            document.getElementById('breadcrumbs').innerText = `HOME > SOURCING > ${item.name.substring(0,10)}...`;
-            
-            // Update Product Details
-            document.getElementById('product-desc').innerText = item.product_desc || "High quality generative art asset.";
-            document.getElementById('edition-badge').innerText = item.edition || "Open Edition";
-
-            const stats = item.stats || {str:50, int:50, dex:50};
-            ['str','int','dex'].forEach(s => {
-                document.getElementById(`val-${s}`).innerText = stats[s];
-                document.getElementById(`bar-${s}`).style.width = stats[s] + '%';
-            });
-
-            const skillDesc = { "Combat": "High damage melee.", "Hacking": "Breaches firewalls.", "Stealth": "Undetectable." };
-            const sCont = document.getElementById('modal-skills');
-            sCont.innerHTML = (item.skills || ['Collectible']).map(s => `<span class="skill-tag" data-desc="${skillDesc[s]||'Special ability.'}">${s}</span>`).join('');
-
-            const points = []; for(let i=0; i<=10; i++) points.push(`${i*10},${15 + (Math.random()*20 - 10)}`);
-            document.getElementById('sparkline-path').setAttribute('d', `M${points.join(' L')}`);
-
-            generateLore();
-            document.getElementById('burn-effect').classList.remove('burn-active');
-            initChat(item.name);
-            m.style.display = 'flex';
+            document.getElementById('modal-price').innerText = '$' + document.getElementById('modal-img').src); 
+            // Keep using the part 2 JS logic for Part 2
+            document.getElementById('product-modal').style.display = 'flex';
         }
 
         function closeModal(e) { if(e.target.id === 'product-modal') closeModalDirect(); }
-        function closeModalDirect() { document.getElementById('product-modal').style.display = 'none'; }
+        function closeModalDirect() { document.getElementById('product-modal').style.display = 'part 2: https://part 2:  using my own code and it is not some wrapper."
 
-        function generateLore() {
-            if(!currentItem) return;
-            const adj = ["Silent", "Neon", "Cyber", "Quantum", "Void", "Radioactive"];
-            const noun = ["Wraith", "Samurai", "Ronin", "Glitch", "Phantom", "Vanguard"];
-            const loc = ["Sector 7", "The Outer Rim", "Neo-Tokyo", "The Deep Web", "Orbit Station"];
-            const act = ["data theft", "assassination", "system override", "espionage", "survival"];
-            const lore = `Unit: ${currentItem.name}. Origin: ${loc[Math.floor(Math.random()*loc.length)]}. Directive: ${act[Math.floor(Math.random()*act.length)]}. Alias: "${adj[Math.floor(Math.random()*adj.length)]} ${noun[Math.floor(Math.random()*noun.length)]}".`;
-            document.getElementById('lore-text').innerText = lore;
+        // --- THE NEW TRADING LOGIC ---
+
+        function listForTrade() {
+            // 4. LIST FOR TRADE
+            if (!currentItem) return;
+            
+            // Add to market list
+            marketListings.push(currentItem);
+            
+            // Remove from main inventory visually so it appears "Sold/Traded" in the shop.
+            // (Note: In a real app, this would update the database. For now, we simulate the removal visually.)
+
+            // Refresh the Shop Grid
+            renderGrid(allItems.filter(i => i !== currentItem));
+
+            // Switch to Market View
+            showMarket();
+
+            // Open Modal for confirmation
+            openModal(currentItem);
         }
 
-        let isZooming = false;
-        function startZoom(e) {
-            e.preventDefault(); isZooming = true; const img = e.target; img.style.cursor = 'grabbing';
-            const onMove = (ev) => {
-                if(!isZooming) return;
-                const x = (window.innerWidth / 2 - ev.pageX) / 10;
-                const y = (window.innerHeight / 2 - ev.pageY) / 10;
-                img.style.transform = `scale(2) translate(${x}px, ${y}px)`;
-            };
-            const onUp = () => { isZooming = false; img.style.cursor = 'grab'; img.style.transform = 'scale(1) translate(0,0)'; window.removeEventListener('mousemove', onMove); window.removeEventListener('mouseup', onUp); };
-            window.addEventListener('mousemove', onMove); window.addEventListener('mouseup', onUp);
+        function renderMarketplace() {
+            const grid = document.getElementById('market-grid');
+            document.getElementById('market-count').innerText = marketListings.length + " ASSETS FOR TRADE";
+
+            grid.innerHTML = marketList.map(item => `
+                <div class="card market-card" onclick='openTradeModal(${JSON.stringify(item)})'>
+                    <div class="card-img-container">
+                        <div class="market-badge">LISTED FOR TRADE</div>
+                        <img src="${getImg(item.art_url)}" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-title">${item.name}</div>
+                        <div style="color: var(--trade); font-size: 0.7rem; text-transform: uppercase; font-weight: bold; margin-bottom: 0px;">FOR TRADE</div>
+                        <div class="card-meta">
+                            <span class="price" style="color:var(--trade);">$${item.price}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
         }
 
-        function triggerBurn() { const el = document.getElementById('burn-effect'); el.classList.add('burn-active'); setTimeout(() => el.classList.remove('burn-active'), 2000); }
-        function downloadImage() { const link = document.createElement('a'); link.href = getImg(currentItem.art_url); link.download = currentItem.name + '.jpg'; link.click(); }
-        function copyLink() { navigator.clipboard.writeText(window.location.href + '#item=' + currentItem.name); alert("Asset link copied."); }
+        /* --- TRADE EXECUTION -- */
 
-        document.addEventListener('keydown', (e) => { if(e.key === "Escape") closeModalDirect(); });
-
-        function initChat(itemName) {
-            const chatBox = document.getElementById('chat-box'); chatBox.innerHTML = '';
-            const fakes = [{u: "SYS_ADMIN", t: `Decrypted: ${itemName} metadata.`}, {u: "Trader_X", t: "Market value holding steady."}, {u: "Ghost", t: "Seen one in Sector 4."}];
-            fakes.forEach(c => addMsg(c.u, c.t));
-        }
-        function postComment() {
-            const input = document.getElementById('chat-input'); const txt = input.value.trim();
-            if(txt) { addMsg("YOU", txt); input.value=''; setTimeout(()=>addMsg("BOT", "Local node updated."), 800); }
-        }
-        function addMsg(user, text) {
-            const d = document.createElement('div');
-            d.className = 'chat-msg'; d.style.marginBottom = '8px'; d.style.borderBottom = '1px solid #222';
-            d.innerHTML = `<span style="color:${user==='YOU'?'#00ff41':'#00f3ff'}; font-weight:bold;">${user}:</span> <span style="color:#ccc;">${text}</span>`;
-            const box = document.getElementById('chat-box'); box.appendChild(d); box.scrollTop = box.scrollHeight;
+        function openTradeModal(item) {
+            document.getElementById('trade-modal').style.display = 'flex';
+            // Populate the "OFFER" side
+            document.getElementById('trade-img-1').src = getImg(item.art_url);
+            document.getElementById('trade-name-1').innerText = item.name;
+            document.getElementById('trade-price-1').innerText = "$" + (item.price * 0.8).toFixed(2); // Trade Value
         }
 
-        document.querySelectorAll('.nav-btn, .btn-action').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                let r = document.createElement('div');
-                r.className = 'ripple';
-                r.style.left = (e.clientX - this.getBoundingClientRect().left) + 'px';
-                r.style.top = (e.clientY - this.getBoundingClientRect().top) + 'px';
-                this.appendChild(r);
-                setTimeout(() => r.remove(), 600);
-            })
-        });
+        function closeTradeDirect() { document.getElementById('trading-manager">Close</div>.style.display = 'div id="trade-modal" class="modal-overlay" hidden; }
 
-        window.addEventListener('scroll', () => {
-            const btn = document.querySelector('.back-to-top');
-            if(window.scrollY > 300) btn.classList.add('visible');
-            else btn.classList.remove('visible');
-        });
+        function closeTrade(e) { if(e.target.id === 'trade-modal') closeTradeDirect(); }
 
-        showHome();
-    </script>
+        function executeTrade() {
+            // Simulate a successful trade
+            alert("TRADE SUCCESSFUL.");
+            // In a real app, this would verify the transaction and swap the assets in the database.
+            document.getElementById('trade-modal').style.display = 'none';
+        }
+
+        /* --- CUSTOMIZER --- */
+        function openCustomizer() {
+            document.getElementById('customizer').style.display = 'part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://part 2: https://div id="toast-container"></div>
+        </div>
+    </div>
+    </div>
 </body>
-    </html>
+                           </html>
