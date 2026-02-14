@@ -41,7 +41,7 @@ class ArtGenerator:
         prompt = f"{style_modifier} digital art of {character_name}, highly detailed, vibrant colors"
         seed = random.randint(1, 999999)
         
-        # FIX: Replace spaces with dashes to ensure URL works on GitHub Pages
+        # FIX: Replace spaces with dashes so the image URL works
         safe_prompt = prompt.replace(" ", "-")
         return f"https://pollinations.ai/p/{safe_prompt}?width=600&height=400&seed={seed}&nologo=true"
 
