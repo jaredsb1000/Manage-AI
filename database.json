@@ -62,6 +62,20 @@
             },
             "status": "Virtual",
             "art_url": "./images/407466.jpg"
+        },
+        {
+            "name": "Sourcing Set: Frozen Ice Queen [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Frozen Ice Queen art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #FrozenIceQueen #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Frozen Ice Queen\" piece. \ud83c\udfa8\nOnly 5.00 for the receipt + link.\n\nClick the link to view/buy! \ud83d\udc47\n#familyvault #digitalart #FrozenIceQueen"
+            },
+            "status": "Virtual",
+            "art_url": "images/183631.jpg"
         }
     ],
     "family_protocols": {
