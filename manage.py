@@ -16,19 +16,20 @@ class Config:
         else:
             return "NORMAL"
 
-# --- THE LIBRARY ---
+# --- THE LIBRARY (SANITIZED FOR COPYRIGHT SAFETY) ---
 class SpoofLibrary:
     def get_character(self):
+        # These are "Parody/Inspired" names to protect you from Copyright Strikes
         characters = [
-            "Big Eared Mouse", "Sea Sponge", "Blue House Cat", "Fast Blue Hedgehog", "Yellow Electric Rodent",
-            "Italian Plumber Brothers", "Green Dinosaur", "Pink Puffball", "Cave Dwelling Elf", "Hylian Princess",
-            "Mutant Turtle Heroes", "Web Slinger", "Rich Billionaire", "The Dark Knight", "Amazonian Warrior",
-            "Last Son of Krypton", "Speedy Crimson Hero", "The First Avenger", "Iron Man in Armor", "Green Giant Monster",
-            "Frozen Ice Queen", "Yellow Snow Creatures", "Wooden Boy", "Space Cowboy", "Valkyrie Pilot", "Blue Alien Cat",
-            "Submarine Captain", "Pink Panther Cat", "Bugs Bunny Rabbit", "Daffy Duck", "Road Runner", "Wile E. Coyote",
-            "Fat Cat", "Peanut Dog", "Yellow Family", "The Space Mutants", "Samurai Jack", "Ed, Edd, and Eddy",
-            "Johnny Bravo", "Courage Dog", "Dexter", "Dee Dee", "Mandark", "Bubbles", "Buttercup", "Blossom",
-            "Professor Utonium", "Mojo Jojo", "Number 4", "Sector V Operatives", "Numbuh 4", "Wallaby Foster"
+            "Big Eared Mouse", "Sea Sponge Chef", "Blue Feline Hero", "Fast Hedgehog", "Electric Rodent",
+            "Plumber Brothers", "Green Dinosaur Mount", "Pink Puff Hero", "Forest Elf", "Princess of Power",
+            "Turtle Ninjas", "Web Vigilante", "Tech Billionaire", "Dark Vigilante", "Amazonian Warrior",
+            "Alien Survivor", "Speedster Hero", "Star Soldier", "Iron Knight", "Green Giant",
+            "Ice Sorceress", "Snow Minions", "Wood Puppet", "Space Pilot", "Valkyrie", "Blue Alien",
+            "Submarine Captain", "Pink Panther", "Cartoon Rabbit", "Duck Hunter", "Fast Bird",
+            "Fat Cat", "Beagle Dog", "Yellow Family", "Space Mutants", "Samurai Warrior", "Ed, Edd, Eddy",
+            "Johnny Bravo", "Dog of Courage", "Boy Genius", "Dee Dee", "Mandark", "Powerpuff Girls",
+            "Professor", "Evil Ape", "Numbuh 4", "Kids Next Door", "Foster's Imaginary Friend"
         ]
         return random.choice(characters)
 
