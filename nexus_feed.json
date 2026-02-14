@@ -78,5 +78,9 @@
     {
         "name": "Road Runner",
         "price": 25
+    },
+    {
+        "name": "Space Mutants",
+        "price": 50
     }
 ]
