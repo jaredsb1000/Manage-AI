@@ -98,5 +98,9 @@
     {
         "name": "Samurai Warrior",
         "price": 100
+    },
+    {
+        "name": "Iron Knight",
+        "price": 50
     }
 ]

@@ -310,6 +310,28 @@
             "product_type": "Premium Stretched Canvas",
             "edition": "1 of 1 (Unique)",
             "product_desc": "Museum-quality canvas on a wooden frame."
+        },
+        {
+            "name": "Iron Knight",
+            "rarity": "EPIC",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "art_url": "images/455279.jpg",
+            "stats": {
+                "str": 91,
+                "int": 94,
+                "dex": 63
+            },
+            "skills": [
+                "Stealth",
+                "Firewall",
+                "Telepathy",
+                "Speed"
+            ],
+            "product_type": "Unisex Heavy Blend Hoodie",
+            "edition": "1 of 100,000 (Limited)",
+            "product_desc": "Comfortable, classic fit hoodie."
         }
     ],
     "family_protocols": {
