@@ -94,5 +94,9 @@
     {
         "name": "Fast Hedgehog",
         "price": 25
+    },
+    {
+        "name": "Samurai Warrior",
+        "price": 100
     }
 ]
