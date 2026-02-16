@@ -332,6 +332,27 @@
             "product_type": "Unisex Heavy Blend Hoodie",
             "edition": "1 of 100,000 (Limited)",
             "product_desc": "Comfortable, classic fit hoodie."
+        },
+        {
+            "name": "Boy Genius",
+            "rarity": "NORMAL",
+            "price": 25,
+            "profit": 23.25,
+            "market_trend": "TRENDING",
+            "art_url": "images/745048.jpg",
+            "stats": {
+                "str": 55,
+                "int": 43,
+                "dex": 47
+            },
+            "skills": [
+                "Hacking",
+                "Combat",
+                "Agility"
+            ],
+            "product_type": "Ceramic Coffee Mug",
+            "edition": "1 of 1,000,000 (Open)",
+            "product_desc": "Durable ceramic mug in glossy finish."
         }
     ],
     "family_protocols": {

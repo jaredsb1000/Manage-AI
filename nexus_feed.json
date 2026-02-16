@@ -102,5 +102,9 @@
     {
         "name": "Iron Knight",
         "price": 50
+    },
+    {
+        "name": "Boy Genius",
+        "price": 25
     }
 ]
