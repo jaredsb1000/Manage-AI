@@ -106,5 +106,9 @@
     {
         "name": "Boy Genius",
         "price": 25
+    },
+    {
+        "name": "Fast Hedgehog",
+        "price": 25
     }
 ]
