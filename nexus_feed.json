@@ -110,5 +110,9 @@
     {
         "name": "Fast Hedgehog",
         "price": 25
+    },
+    {
+        "name": "Web Vigilante",
+        "price": 25
     }
 ]
