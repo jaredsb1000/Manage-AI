@@ -395,6 +395,27 @@
             "product_type": "Ceramic Coffee Mug",
             "edition": "1 of 1,000,000 (Open)",
             "product_desc": "Durable ceramic mug in glossy finish."
+        },
+        {
+            "name": "Web Vigilante",
+            "rarity": "NORMAL",
+            "price": 25,
+            "profit": 23.25,
+            "market_trend": "STABLE",
+            "art_url": "images/733180.jpg",
+            "stats": {
+                "str": 65,
+                "int": 70,
+                "dex": 44
+            },
+            "skills": [
+                "Diplomacy",
+                "Data Mining",
+                "Engineering"
+            ],
+            "product_type": "Ceramic Coffee Mug",
+            "edition": "1 of 1,000,000 (Open)",
+            "product_desc": "Durable ceramic mug in glossy finish."
         }
     ],
     "family_protocols": {
