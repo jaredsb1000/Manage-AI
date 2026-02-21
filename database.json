@@ -437,6 +437,29 @@
             "product_type": "Ceramic Coffee Mug",
             "edition": "1 of 1,000,000 (Open)",
             "product_desc": "Durable ceramic mug in glossy finish."
+        },
+        {
+            "name": "Mandark",
+            "rarity": "ULTRA_RARE",
+            "price": 100,
+            "profit": 94.5,
+            "market_trend": "TRENDING",
+            "art_url": "images/734146.jpg",
+            "stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 98
+            },
+            "skills": [
+                "Telepathy",
+                "Combat",
+                "Firewall",
+                "Speed",
+                "Engineering"
+            ],
+            "product_type": "Premium Stretched Canvas",
+            "edition": "1 of 1 (Unique)",
+            "product_desc": "Museum-quality canvas on a wooden frame."
         }
     ],
     "family_protocols": {

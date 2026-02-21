@@ -122,5 +122,9 @@
     {
         "name": "Powerpuff Girls",
         "price": 25
+    },
+    {
+        "name": "Mandark",
+        "price": 100
     }
 ]
