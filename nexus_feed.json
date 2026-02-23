@@ -130,5 +130,9 @@
     {
         "name": "Big Eared Mouse",
         "price": 100
+    },
+    {
+        "name": "Snow Minions",
+        "price": 25
     }
 ]
