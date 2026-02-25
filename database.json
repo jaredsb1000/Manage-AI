@@ -528,6 +528,30 @@
                 "Speed",
                 "Fireball"
             ]
+        },
+        {
+            "name": "Sourcing Set: Forest Elf [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Forest Elf art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #ForestElf #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Forest Elf\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #ForestElf"
+            },
+            "status": "Virtual",
+            "art_url": "images/479220.jpg",
+            "game_stats": {
+                "str": 61,
+                "int": 53,
+                "dex": 45
+            },
+            "skills": [
+                "Diplomacy",
+                "Stealth",
+                "Agility"
+            ]
         }
     ],
     "family_protocols": {
