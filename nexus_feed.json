@@ -209,5 +209,30 @@
                 "Hacking"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-02-27T11:04:30.121358",
+        "data": {
+            "name": "Sourcing Set: Alien Survivor",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Alien Survivor art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #AlienSurvivor #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Alien Survivor\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #AlienSurvivor"
+            },
+            "game_stats": {
+                "str": 61,
+                "int": 46,
+                "dex": 47
+            },
+            "skills": [
+                "Agility",
+                "Diplomacy",
+                "Sorcery"
+            ]
+        }
     }
 ]
