@@ -234,5 +234,32 @@
                 "Sorcery"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-02-28T09:48:02.103707",
+        "data": {
+            "name": "Sourcing Set: Beagle Dog",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Beagle Dog art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #BeagleDog #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Beagle Dog\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #BeagleDog"
+            },
+            "game_stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 100
+            },
+            "skills": [
+                "Hacking",
+                "Data Mining",
+                "Engineering",
+                "Combat",
+                "Agility"
+            ]
+        }
     }
 ]

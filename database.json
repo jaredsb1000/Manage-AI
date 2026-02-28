@@ -600,6 +600,32 @@
                 "Diplomacy",
                 "Sorcery"
             ]
+        },
+        {
+            "name": "Sourcing Set: Beagle Dog [ULTRA_RARE]",
+            "price": 50,
+            "physical_value": 500,
+            "rarity": "ULTRA_RARE",
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Beagle Dog art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #BeagleDog #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Beagle Dog\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #BeagleDog"
+            },
+            "status": "Virtual",
+            "art_url": "images/935685.jpg",
+            "game_stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 100
+            },
+            "skills": [
+                "Hacking",
+                "Data Mining",
+                "Engineering",
+                "Combat",
+                "Agility"
+            ]
         }
     ],
     "family_protocols": {
