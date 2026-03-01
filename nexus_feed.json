@@ -261,5 +261,32 @@
                 "Agility"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-03-01T09:53:48.711798",
+        "data": {
+            "name": "Sourcing Set: Speedster Hero",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Speedster Hero art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SpeedsterHero #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Speedster Hero\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SpeedsterHero"
+            },
+            "game_stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 100
+            },
+            "skills": [
+                "Strength",
+                "Speed",
+                "Telepathy",
+                "Agility",
+                "Engineering"
+            ]
+        }
     }
 ]

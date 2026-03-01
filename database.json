@@ -626,6 +626,32 @@
                 "Combat",
                 "Agility"
             ]
+        },
+        {
+            "name": "Sourcing Set: Speedster Hero [ULTRA_RARE]",
+            "price": 50,
+            "physical_value": 500,
+            "rarity": "ULTRA_RARE",
+            "profit": 47.0,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Speedster Hero art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SpeedsterHero #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Speedster Hero\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SpeedsterHero"
+            },
+            "status": "Virtual",
+            "art_url": "images/830499.jpg",
+            "game_stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 100
+            },
+            "skills": [
+                "Strength",
+                "Speed",
+                "Telepathy",
+                "Agility",
+                "Engineering"
+            ]
         }
     ],
     "family_protocols": {
