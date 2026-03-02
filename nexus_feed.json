@@ -288,5 +288,30 @@
                 "Engineering"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-03-02T11:09:42.585025",
+        "data": {
+            "name": "Sourcing Set: Sector V Operatives",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Sector V Operatives art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SectorVOperatives #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Sector V Operatives\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SectorVOperatives"
+            },
+            "game_stats": {
+                "str": 70,
+                "int": 65,
+                "dex": 67
+            },
+            "skills": [
+                "Combat",
+                "Telepathy",
+                "Speed"
+            ]
+        }
     }
 ]
