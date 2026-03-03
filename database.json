@@ -676,6 +676,30 @@
                 "Telepathy",
                 "Speed"
             ]
+        },
+        {
+            "name": "Sourcing Set: Pink Puff Hero [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Pink Puff Hero art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #PinkPuffHero #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Pink Puff Hero\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #PinkPuffHero"
+            },
+            "status": "Virtual",
+            "art_url": "images/532373.jpg",
+            "game_stats": {
+                "str": 59,
+                "int": 46,
+                "dex": 70
+            },
+            "skills": [
+                "Sorcery",
+                "Combat",
+                "Strength"
+            ]
         }
     ],
     "family_protocols": {
