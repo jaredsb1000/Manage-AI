@@ -700,6 +700,30 @@
                 "Combat",
                 "Strength"
             ]
+        },
+        {
+            "name": "Sourcing Set: Sector V Operatives [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Sector V Operatives art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SectorVOperatives #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Sector V Operatives\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SectorVOperatives"
+            },
+            "status": "Virtual",
+            "art_url": "images/641467.jpg",
+            "game_stats": {
+                "str": 68,
+                "int": 58,
+                "dex": 60
+            },
+            "skills": [
+                "Agility",
+                "Stealth",
+                "Speed"
+            ]
         }
     ],
     "family_protocols": {

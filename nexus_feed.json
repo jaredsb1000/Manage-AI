@@ -338,5 +338,30 @@
                 "Strength"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-03-04T10:59:38.030329",
+        "data": {
+            "name": "Sourcing Set: Sector V Operatives",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Sector V Operatives art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SectorVOperatives #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Sector V Operatives\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SectorVOperatives"
+            },
+            "game_stats": {
+                "str": 68,
+                "int": 58,
+                "dex": 60
+            },
+            "skills": [
+                "Agility",
+                "Stealth",
+                "Speed"
+            ]
+        }
     }
 ]
