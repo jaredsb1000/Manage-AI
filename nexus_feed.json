@@ -413,5 +413,32 @@
                 "Sorcery"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-03-07T09:52:46.798957",
+        "data": {
+            "name": "Sourcing Set: Green Giant Monster",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Green Giant Monster art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #GreenGiantMonster #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Green Giant Monster\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #GreenGiantMonster"
+            },
+            "game_stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 100
+            },
+            "skills": [
+                "Stealth",
+                "Hacking",
+                "Diplomacy",
+                "Agility",
+                "Sorcery"
+            ]
+        }
     }
 ]
