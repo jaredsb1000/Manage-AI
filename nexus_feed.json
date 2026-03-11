@@ -521,5 +521,32 @@
                 "Stealth"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-03-11T09:34:00.310634",
+        "data": {
+            "name": "Sourcing Set: Yellow Family",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Yellow Family art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #YellowFamily #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Yellow Family\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #YellowFamily"
+            },
+            "game_stats": {
+                "str": 86,
+                "int": 96,
+                "dex": 100
+            },
+            "skills": [
+                "Sorcery",
+                "Hacking",
+                "Combat",
+                "Telepathy",
+                "Diplomacy"
+            ]
+        }
     }
 ]
