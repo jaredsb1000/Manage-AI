@@ -1032,6 +1032,32 @@
                 "Diplomacy",
                 "Sorcery"
             ]
+        },
+        {
+            "name": "Sourcing Set: Boy Genius [ULTRA_RARE]",
+            "price": 50,
+            "physical_value": 500,
+            "rarity": "ULTRA_RARE",
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Boy Genius art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #BoyGenius #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Boy Genius\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #BoyGenius"
+            },
+            "status": "Virtual",
+            "art_url": "images/789728.jpg",
+            "game_stats": {
+                "str": 80,
+                "int": 92,
+                "dex": 86
+            },
+            "skills": [
+                "Strength",
+                "Hacking",
+                "Data Mining",
+                "Stealth",
+                "Fireball"
+            ]
         }
     ],
     "family_protocols": {
