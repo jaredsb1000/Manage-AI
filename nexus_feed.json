@@ -710,5 +710,32 @@
                 "Fireball"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-03-18T09:43:40.149541",
+        "data": {
+            "name": "Sourcing Set: Blue Alien Cat",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Blue Alien Cat art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #BlueAlienCat #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Blue Alien Cat\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #BlueAlienCat"
+            },
+            "game_stats": {
+                "str": 100,
+                "int": 84,
+                "dex": 98
+            },
+            "skills": [
+                "Stealth",
+                "Sorcery",
+                "Fireball",
+                "Speed",
+                "Engineering"
+            ]
+        }
     }
 ]
