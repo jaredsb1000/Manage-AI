@@ -1084,6 +1084,32 @@
                 "Speed",
                 "Engineering"
             ]
+        },
+        {
+            "name": "Sourcing Set: Green Dinosaur Mount [ULTRA_RARE]",
+            "price": 50,
+            "physical_value": 500,
+            "rarity": "ULTRA_RARE",
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Green Dinosaur Mount art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #GreenDinosaurMount #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Green Dinosaur Mount\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #GreenDinosaurMount"
+            },
+            "status": "Virtual",
+            "art_url": "images/435590.jpg",
+            "game_stats": {
+                "str": 82,
+                "int": 88,
+                "dex": 80
+            },
+            "skills": [
+                "Fireball",
+                "Speed",
+                "Diplomacy",
+                "Agility",
+                "Sorcery"
+            ]
         }
     ],
     "family_protocols": {
