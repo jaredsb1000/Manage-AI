@@ -764,5 +764,32 @@
                 "Sorcery"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-03-20T09:32:11.059989",
+        "data": {
+            "name": "Sourcing Set: Duck Hunter",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Duck Hunter art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #DuckHunter #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Duck Hunter\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #DuckHunter"
+            },
+            "game_stats": {
+                "str": 100,
+                "int": 92,
+                "dex": 100
+            },
+            "skills": [
+                "Combat",
+                "Hacking",
+                "Stealth",
+                "Strength",
+                "Sorcery"
+            ]
+        }
     }
 ]
