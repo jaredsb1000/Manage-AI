@@ -818,5 +818,32 @@
                 "Strength"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-03-23T09:54:52.244499",
+        "data": {
+            "name": "Sourcing Set: Professor",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Professor art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #Professor #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Professor\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #Professor"
+            },
+            "game_stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 88
+            },
+            "skills": [
+                "Diplomacy",
+                "Engineering",
+                "Hacking",
+                "Data Mining",
+                "Telepathy"
+            ]
+        }
     }
 ]
