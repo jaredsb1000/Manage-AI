@@ -872,5 +872,32 @@
                 "Sorcery"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-03-25T09:43:45.003661",
+        "data": {
+            "name": "Sourcing Set: Powerpuff Girls",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Why is this so satisfying to look at? \ud83d\ude35\n\nCheck out this trippy Powerpuff Girls art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #PowerpuffGirls #fyp",
+                "facebook": "Why is this so satisfying to look at? \ud83d\ude35\n\nManage AI has sourced a rare \"Powerpuff Girls\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #PowerpuffGirls"
+            },
+            "game_stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 94
+            },
+            "skills": [
+                "Fireball",
+                "Engineering",
+                "Data Mining",
+                "Combat",
+                "Sorcery"
+            ]
+        }
     }
 ]
