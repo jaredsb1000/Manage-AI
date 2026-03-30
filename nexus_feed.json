@@ -1007,5 +1007,30 @@
                 "Combat"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-03-30T10:07:41.041145",
+        "data": {
+            "name": "Sourcing Set: Big Eared Mouse",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Big Eared Mouse art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #BigEaredMouse #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Big Eared Mouse\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #BigEaredMouse"
+            },
+            "game_stats": {
+                "str": 46,
+                "int": 67,
+                "dex": 58
+            },
+            "skills": [
+                "Sorcery",
+                "Engineering",
+                "Combat"
+            ]
+        }
     }
 ]
