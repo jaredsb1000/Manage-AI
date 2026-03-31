@@ -1368,6 +1368,32 @@
                 "Engineering",
                 "Combat"
             ]
+        },
+        {
+            "name": "Sourcing Set: Plumber Brothers [ULTRA_RARE]",
+            "price": 50,
+            "physical_value": 500,
+            "rarity": "ULTRA_RARE",
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Plumber Brothers art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #PlumberBrothers #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Plumber Brothers\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #PlumberBrothers"
+            },
+            "status": "Virtual",
+            "art_url": "images/917837.jpg",
+            "game_stats": {
+                "str": 100,
+                "int": 88,
+                "dex": 86
+            },
+            "skills": [
+                "Combat",
+                "Engineering",
+                "Speed",
+                "Diplomacy",
+                "Agility"
+            ]
         }
     ],
     "family_protocols": {
