@@ -1394,6 +1394,32 @@
                 "Diplomacy",
                 "Agility"
             ]
+        },
+        {
+            "name": "Sourcing Set: Duck Hunter [ULTRA_RARE]",
+            "price": 50,
+            "physical_value": 500,
+            "rarity": "ULTRA_RARE",
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Duck Hunter art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #DuckHunter #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Duck Hunter\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #DuckHunter"
+            },
+            "status": "Virtual",
+            "art_url": "images/461851.jpg",
+            "game_stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 94
+            },
+            "skills": [
+                "Telepathy",
+                "Agility",
+                "Diplomacy",
+                "Stealth",
+                "Engineering"
+            ]
         }
     ],
     "family_protocols": {
