@@ -1472,6 +1472,32 @@
                 "Sorcery",
                 "Fireball"
             ]
+        },
+        {
+            "name": "Sourcing Set: Courage Dog [ULTRA_RARE]",
+            "price": 50,
+            "physical_value": 500,
+            "rarity": "ULTRA_RARE",
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Courage Dog art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #CourageDog #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Courage Dog\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #CourageDog"
+            },
+            "status": "Virtual",
+            "art_url": "images/851253.jpg",
+            "game_stats": {
+                "str": 100,
+                "int": 98,
+                "dex": 100
+            },
+            "skills": [
+                "Sorcery",
+                "Data Mining",
+                "Engineering",
+                "Stealth",
+                "Agility"
+            ]
         }
     ],
     "family_protocols": {

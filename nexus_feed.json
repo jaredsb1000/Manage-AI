@@ -1140,5 +1140,32 @@
                 "Fireball"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-04-04T09:29:21.263313",
+        "data": {
+            "name": "Sourcing Set: Courage Dog",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Courage Dog art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #CourageDog #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Courage Dog\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #CourageDog"
+            },
+            "game_stats": {
+                "str": 100,
+                "int": 98,
+                "dex": 100
+            },
+            "skills": [
+                "Sorcery",
+                "Data Mining",
+                "Engineering",
+                "Stealth",
+                "Agility"
+            ]
+        }
     }
 ]
