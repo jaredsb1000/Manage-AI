@@ -1194,5 +1194,30 @@
                 "Stealth"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-04-06T10:00:26.327499",
+        "data": {
+            "name": "Sourcing Set: Fat Cat",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Why is this so satisfying to look at? \ud83d\ude35\n\nCheck out this trippy Fat Cat art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #FatCat #fyp",
+                "facebook": "Why is this so satisfying to look at? \ud83d\ude35\n\nManage AI has sourced a rare \"Fat Cat\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #FatCat"
+            },
+            "game_stats": {
+                "str": 57,
+                "int": 66,
+                "dex": 56
+            },
+            "skills": [
+                "Diplomacy",
+                "Strength",
+                "Data Mining"
+            ]
+        }
     }
 ]
