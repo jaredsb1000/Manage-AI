@@ -1674,6 +1674,32 @@
                 "Speed",
                 "Data Mining"
             ]
+        },
+        {
+            "name": "Sourcing Set: Princess of Power [ULTRA_RARE]",
+            "price": 50,
+            "physical_value": 500,
+            "rarity": "ULTRA_RARE",
+            "profit": 47.0,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Princess of Power art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #PrincessofPower #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Princess of Power\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #PrincessofPower"
+            },
+            "status": "Virtual",
+            "art_url": "images/952625.jpg",
+            "game_stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 100
+            },
+            "skills": [
+                "Stealth",
+                "Fireball",
+                "Hacking",
+                "Agility",
+                "Telepathy"
+            ]
         }
     ],
     "family_protocols": {
