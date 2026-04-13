@@ -1700,6 +1700,30 @@
                 "Agility",
                 "Telepathy"
             ]
+        },
+        {
+            "name": "Sourcing Set: Big Eared Mouse [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "Why is this so satisfying to look at? \ud83d\ude35\n\nCheck out this trippy Big Eared Mouse art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #BigEaredMouse #fyp",
+                "facebook": "Why is this so satisfying to look at? \ud83d\ude35\n\nManage AI has sourced a rare \"Big Eared Mouse\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #BigEaredMouse"
+            },
+            "status": "Virtual",
+            "art_url": "images/572119.jpg",
+            "game_stats": {
+                "str": 46,
+                "int": 66,
+                "dex": 53
+            },
+            "skills": [
+                "Data Mining",
+                "Diplomacy",
+                "Strength"
+            ]
         }
     ],
     "family_protocols": {
