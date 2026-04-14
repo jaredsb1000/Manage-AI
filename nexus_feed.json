@@ -1402,5 +1402,30 @@
                 "Strength"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-04-14T10:07:37.552183",
+        "data": {
+            "name": "Sourcing Set: Blue Feline Hero",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Blue Feline Hero art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #BlueFelineHero #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Blue Feline Hero\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #BlueFelineHero"
+            },
+            "game_stats": {
+                "str": 67,
+                "int": 49,
+                "dex": 60
+            },
+            "skills": [
+                "Engineering",
+                "Agility",
+                "Speed"
+            ]
+        }
     }
 ]
