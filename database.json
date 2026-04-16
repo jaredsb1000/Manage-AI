@@ -1772,6 +1772,30 @@
                 "Strength",
                 "Telepathy"
             ]
+        },
+        {
+            "name": "Sourcing Set: Powerpuff Girls [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Powerpuff Girls art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #PowerpuffGirls #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Powerpuff Girls\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #PowerpuffGirls"
+            },
+            "status": "Virtual",
+            "art_url": "images/992863.jpg",
+            "game_stats": {
+                "str": 60,
+                "int": 54,
+                "dex": 66
+            },
+            "skills": [
+                "Speed",
+                "Fireball",
+                "Combat"
+            ]
         }
     ],
     "family_protocols": {

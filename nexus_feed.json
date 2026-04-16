@@ -1452,5 +1452,30 @@
                 "Telepathy"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-04-16T10:08:05.417533",
+        "data": {
+            "name": "Sourcing Set: Powerpuff Girls",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Powerpuff Girls art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #PowerpuffGirls #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Powerpuff Girls\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #PowerpuffGirls"
+            },
+            "game_stats": {
+                "str": 60,
+                "int": 54,
+                "dex": 66
+            },
+            "skills": [
+                "Speed",
+                "Fireball",
+                "Combat"
+            ]
+        }
     }
 ]
