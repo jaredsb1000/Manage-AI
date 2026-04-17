@@ -1796,6 +1796,30 @@
                 "Fireball",
                 "Combat"
             ]
+        },
+        {
+            "name": "Sourcing Set: Submarine Captain [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Submarine Captain art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SubmarineCaptain #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Submarine Captain\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SubmarineCaptain"
+            },
+            "status": "Virtual",
+            "art_url": "images/58352.jpg",
+            "game_stats": {
+                "str": 63,
+                "int": 57,
+                "dex": 66
+            },
+            "skills": [
+                "Fireball",
+                "Engineering",
+                "Data Mining"
+            ]
         }
     ],
     "family_protocols": {
