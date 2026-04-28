@@ -1760,5 +1760,30 @@
                 "Agility"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-04-28T10:54:59.515080",
+        "data": {
+            "name": "Sourcing Set: Submarine Captain",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Submarine Captain art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SubmarineCaptain #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Submarine Captain\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SubmarineCaptain"
+            },
+            "game_stats": {
+                "str": 67,
+                "int": 63,
+                "dex": 41
+            },
+            "skills": [
+                "Fireball",
+                "Strength",
+                "Agility"
+            ]
+        }
     }
 ]
