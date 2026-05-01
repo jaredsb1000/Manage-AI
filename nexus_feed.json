@@ -1835,5 +1835,30 @@
                 "Data Mining"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-05-01T10:16:11.325377",
+        "data": {
+            "name": "Sourcing Set: Big Eared Mouse",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Big Eared Mouse art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #BigEaredMouse #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Big Eared Mouse\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #BigEaredMouse"
+            },
+            "game_stats": {
+                "str": 67,
+                "int": 69,
+                "dex": 41
+            },
+            "skills": [
+                "Speed",
+                "Strength",
+                "Data Mining"
+            ]
+        }
     }
 ]
