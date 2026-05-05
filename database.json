@@ -2240,6 +2240,30 @@
                 "Data Mining",
                 "Speed"
             ]
+        },
+        {
+            "name": "Sourcing Set: Dark Vigilante [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Dark Vigilante art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #DarkVigilante #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Dark Vigilante\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #DarkVigilante"
+            },
+            "status": "Virtual",
+            "art_url": "images/282565.jpg",
+            "game_stats": {
+                "str": 54,
+                "int": 54,
+                "dex": 47
+            },
+            "skills": [
+                "Speed",
+                "Engineering",
+                "Fireball"
+            ]
         }
     ],
     "family_protocols": {
