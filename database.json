@@ -2480,6 +2480,30 @@
                 "Combat",
                 "Engineering"
             ]
+        },
+        {
+            "name": "Sourcing Set: Turtle Ninjas [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Turtle Ninjas art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #TurtleNinjas #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Turtle Ninjas\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #TurtleNinjas"
+            },
+            "status": "Virtual",
+            "art_url": "images/508329.jpg",
+            "game_stats": {
+                "str": 66,
+                "int": 69,
+                "dex": 58
+            },
+            "skills": [
+                "Fireball",
+                "Speed",
+                "Agility"
+            ]
         }
     ],
     "family_protocols": {
