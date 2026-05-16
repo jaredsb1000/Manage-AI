@@ -2504,6 +2504,30 @@
                 "Speed",
                 "Agility"
             ]
+        },
+        {
+            "name": "Sourcing Set: Alien Survivor [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Alien Survivor art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #AlienSurvivor #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Alien Survivor\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #AlienSurvivor"
+            },
+            "status": "Virtual",
+            "art_url": "images/688130.jpg",
+            "game_stats": {
+                "str": 64,
+                "int": 53,
+                "dex": 55
+            },
+            "skills": [
+                "Agility",
+                "Fireball",
+                "Telepathy"
+            ]
         }
     ],
     "family_protocols": {
