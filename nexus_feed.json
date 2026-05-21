@@ -2340,5 +2340,31 @@
                 "Agility"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-05-21T12:07:35.636433",
+        "data": {
+            "name": "Sourcing Set: Cartoon Rabbit",
+            "price": 10,
+            "profit": 9.0,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Cartoon Rabbit art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #CartoonRabbit #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Cartoon Rabbit\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #CartoonRabbit"
+            },
+            "game_stats": {
+                "str": 75,
+                "int": 100,
+                "dex": 61
+            },
+            "skills": [
+                "Hacking",
+                "Data Mining",
+                "Stealth",
+                "Agility"
+            ]
+        }
     }
 ]
