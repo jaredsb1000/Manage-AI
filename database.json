@@ -2698,6 +2698,30 @@
                 "Strength",
                 "Diplomacy"
             ]
+        },
+        {
+            "name": "Sourcing Set: Green Giant Monster [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Green Giant Monster art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #GreenGiantMonster #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Green Giant Monster\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #GreenGiantMonster"
+            },
+            "status": "Virtual",
+            "art_url": "images/906153.jpg",
+            "game_stats": {
+                "str": 44,
+                "int": 58,
+                "dex": 65
+            },
+            "skills": [
+                "Diplomacy",
+                "Telepathy",
+                "Sorcery"
+            ]
         }
     ],
     "family_protocols": {
