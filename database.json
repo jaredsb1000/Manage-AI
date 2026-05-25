@@ -2722,6 +2722,31 @@
                 "Telepathy",
                 "Sorcery"
             ]
+        },
+        {
+            "name": "Sourcing Set: Coyote Hunter [EPIC]",
+            "price": 10,
+            "physical_value": 40,
+            "rarity": "EPIC",
+            "profit": 9.0,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Coyote Hunter art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #CoyoteHunter #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Coyote Hunter\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #CoyoteHunter"
+            },
+            "status": "Virtual",
+            "art_url": "images/920638.jpg",
+            "game_stats": {
+                "str": 82,
+                "int": 91,
+                "dex": 91
+            },
+            "skills": [
+                "Combat",
+                "Speed",
+                "Sorcery",
+                "Fireball"
+            ]
         }
     ],
     "family_protocols": {
