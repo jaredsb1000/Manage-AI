@@ -2821,6 +2821,30 @@
                 "Speed",
                 "Agility"
             ]
+        },
+        {
+            "name": "Sourcing Set: Web Vigilante [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Web Vigilante art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #WebVigilante #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Web Vigilante\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #WebVigilante"
+            },
+            "status": "Virtual",
+            "art_url": "images/54016.jpg",
+            "game_stats": {
+                "str": 50,
+                "int": 43,
+                "dex": 69
+            },
+            "skills": [
+                "Sorcery",
+                "Fireball",
+                "Hacking"
+            ]
         }
     ],
     "family_protocols": {
