@@ -2670,5 +2670,30 @@
                 "Engineering"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-06-05T11:55:59.257988",
+        "data": {
+            "name": "Sourcing Set: Tech Billionaire",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Tech Billionaire art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #TechBillionaire #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Tech Billionaire\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #TechBillionaire"
+            },
+            "game_stats": {
+                "str": 62,
+                "int": 50,
+                "dex": 54
+            },
+            "skills": [
+                "Agility",
+                "Stealth",
+                "Strength"
+            ]
+        }
     }
 ]
