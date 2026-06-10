@@ -2796,5 +2796,31 @@
                 "Fireball"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-06-10T12:13:48.372805",
+        "data": {
+            "name": "Sourcing Set: Duck Hunter",
+            "price": 10,
+            "profit": 9.0,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Duck Hunter art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #DuckHunter #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Duck Hunter\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #DuckHunter"
+            },
+            "game_stats": {
+                "str": 72,
+                "int": 81,
+                "dex": 85
+            },
+            "skills": [
+                "Stealth",
+                "Data Mining",
+                "Diplomacy",
+                "Speed"
+            ]
+        }
     }
 ]
