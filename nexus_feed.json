@@ -2822,5 +2822,31 @@
                 "Speed"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-06-11T12:36:51.705906",
+        "data": {
+            "name": "Sourcing Set: Wooden Puppet",
+            "price": 10,
+            "profit": 9.0,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Wooden Puppet art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #WoodenPuppet #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Wooden Puppet\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #WoodenPuppet"
+            },
+            "game_stats": {
+                "str": 66,
+                "int": 93,
+                "dex": 97
+            },
+            "skills": [
+                "Combat",
+                "Speed",
+                "Fireball",
+                "Telepathy"
+            ]
+        }
     }
 ]
