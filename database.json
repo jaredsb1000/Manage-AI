@@ -3138,6 +3138,30 @@
                 "Data Mining",
                 "Telepathy"
             ]
+        },
+        {
+            "name": "Sourcing Set: Plumber Brothers [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Plumber Brothers art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #PlumberBrothers #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Plumber Brothers\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #PlumberBrothers"
+            },
+            "status": "Virtual",
+            "art_url": "images/768625.jpg",
+            "game_stats": {
+                "str": 67,
+                "int": 63,
+                "dex": 41
+            },
+            "skills": [
+                "Sorcery",
+                "Speed",
+                "Fireball"
+            ]
         }
     ],
     "family_protocols": {
