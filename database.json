@@ -3234,6 +3234,31 @@
                 "Stealth",
                 "Telepathy"
             ]
+        },
+        {
+            "name": "Sourcing Set: Ice Sorceress [EPIC]",
+            "price": 10,
+            "physical_value": 40,
+            "rarity": "EPIC",
+            "profit": 9.0,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Ice Sorceress art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #IceSorceress #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Ice Sorceress\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #IceSorceress"
+            },
+            "status": "Virtual",
+            "art_url": "images/218497.jpg",
+            "game_stats": {
+                "str": 100,
+                "int": 69,
+                "dex": 94
+            },
+            "skills": [
+                "Sorcery",
+                "Data Mining",
+                "Agility",
+                "Telepathy"
+            ]
         }
     ],
     "family_protocols": {
