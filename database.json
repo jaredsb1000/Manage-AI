@@ -3284,6 +3284,31 @@
                 "Hacking",
                 "Sorcery"
             ]
+        },
+        {
+            "name": "Sourcing Set: Courage Dog [EPIC]",
+            "price": 10,
+            "physical_value": 40,
+            "rarity": "EPIC",
+            "profit": 9.0,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "Why is this so satisfying to look at? \ud83d\ude35\n\nCheck out this trippy Courage Dog art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #CourageDog #fyp",
+                "facebook": "Why is this so satisfying to look at? \ud83d\ude35\n\nManage AI has sourced a rare \"Courage Dog\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #CourageDog"
+            },
+            "status": "Virtual",
+            "art_url": "images/20029.jpg",
+            "game_stats": {
+                "str": 100,
+                "int": 96,
+                "dex": 73
+            },
+            "skills": [
+                "Stealth",
+                "Speed",
+                "Engineering",
+                "Telepathy"
+            ]
         }
     ],
     "family_protocols": {
