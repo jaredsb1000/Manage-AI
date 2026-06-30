@@ -3303,5 +3303,30 @@
                 "Combat"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-06-30T11:38:35.728954",
+        "data": {
+            "name": "Sourcing Set: Evil Genius",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Evil Genius art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #EvilGenius #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Evil Genius\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #EvilGenius"
+            },
+            "game_stats": {
+                "str": 41,
+                "int": 57,
+                "dex": 64
+            },
+            "skills": [
+                "Diplomacy",
+                "Engineering",
+                "Telepathy"
+            ]
+        }
     }
 ]
