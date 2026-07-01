@@ -3328,5 +3328,30 @@
                 "Telepathy"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-07-01T11:51:08.868821",
+        "data": {
+            "name": "Sourcing Set: Ed, Edd, Eddy",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Ed, Edd, Eddy art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #Ed,Edd,Eddy #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Ed, Edd, Eddy\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #Ed,Edd,Eddy"
+            },
+            "game_stats": {
+                "str": 70,
+                "int": 59,
+                "dex": 44
+            },
+            "skills": [
+                "Sorcery",
+                "Diplomacy",
+                "Fireball"
+            ]
+        }
     }
 ]
