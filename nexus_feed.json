@@ -3378,5 +3378,30 @@
                 "Speed"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-07-03T11:26:12.724442",
+        "data": {
+            "name": "Sourcing Set: Cartoon Rabbit",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Cartoon Rabbit art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #CartoonRabbit #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Cartoon Rabbit\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #CartoonRabbit"
+            },
+            "game_stats": {
+                "str": 58,
+                "int": 51,
+                "dex": 47
+            },
+            "skills": [
+                "Stealth",
+                "Telepathy",
+                "Diplomacy"
+            ]
+        }
     }
 ]
