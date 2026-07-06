@@ -3453,5 +3453,31 @@
                 "Stealth"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-07-06T12:36:19.460424",
+        "data": {
+            "name": "Sourcing Set: Coyote Hunter",
+            "price": 10,
+            "profit": 9.0,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Coyote Hunter art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #CoyoteHunter #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Coyote Hunter\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #CoyoteHunter"
+            },
+            "game_stats": {
+                "str": 61,
+                "int": 99,
+                "dex": 79
+            },
+            "skills": [
+                "Hacking",
+                "Telepathy",
+                "Diplomacy",
+                "Strength"
+            ]
+        }
     }
 ]

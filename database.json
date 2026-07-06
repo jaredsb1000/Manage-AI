@@ -3694,6 +3694,31 @@
                 "Diplomacy",
                 "Stealth"
             ]
+        },
+        {
+            "name": "Sourcing Set: Coyote Hunter [EPIC]",
+            "price": 10,
+            "physical_value": 40,
+            "rarity": "EPIC",
+            "profit": 9.0,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Coyote Hunter art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #CoyoteHunter #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Coyote Hunter\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #CoyoteHunter"
+            },
+            "status": "Virtual",
+            "art_url": "images/290186.jpg",
+            "game_stats": {
+                "str": 61,
+                "int": 99,
+                "dex": 79
+            },
+            "skills": [
+                "Hacking",
+                "Telepathy",
+                "Diplomacy",
+                "Strength"
+            ]
         }
     ],
     "family_protocols": {
