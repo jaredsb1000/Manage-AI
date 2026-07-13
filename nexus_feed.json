@@ -3629,5 +3629,30 @@
                 "Speed"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-07-13T11:51:52.380527",
+        "data": {
+            "name": "Sourcing Set: Boy Genius",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Boy Genius art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #BoyGenius #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Boy Genius\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #BoyGenius"
+            },
+            "game_stats": {
+                "str": 64,
+                "int": 47,
+                "dex": 64
+            },
+            "skills": [
+                "Hacking",
+                "Data Mining",
+                "Engineering"
+            ]
+        }
     }
 ]
