@@ -4031,6 +4031,30 @@
                 "Engineering",
                 "Strength"
             ]
+        },
+        {
+            "name": "Sourcing Set: Number 4 [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Number 4 art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #Number4 #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Number 4\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #Number4"
+            },
+            "status": "Virtual",
+            "art_url": "images/138085.jpg",
+            "game_stats": {
+                "str": 41,
+                "int": 57,
+                "dex": 50
+            },
+            "skills": [
+                "Hacking",
+                "Strength",
+                "Stealth"
+            ]
         }
     ],
     "family_protocols": {
