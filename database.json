@@ -4079,6 +4079,30 @@
                 "Speed",
                 "Hacking"
             ]
+        },
+        {
+            "name": "Sourcing Set: Cartoon Rabbit [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Cartoon Rabbit art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #CartoonRabbit #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Cartoon Rabbit\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #CartoonRabbit"
+            },
+            "status": "Virtual",
+            "art_url": "images/144247.jpg",
+            "game_stats": {
+                "str": 68,
+                "int": 55,
+                "dex": 56
+            },
+            "skills": [
+                "Diplomacy",
+                "Data Mining",
+                "Agility"
+            ]
         }
     ],
     "family_protocols": {
