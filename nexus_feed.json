@@ -3954,5 +3954,30 @@
                 "Diplomacy"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-07-26T10:29:11.796413",
+        "data": {
+            "name": "Sourcing Set: Space Mutants",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Why is this so satisfying to look at? \ud83d\ude35\n\nCheck out this trippy Space Mutants art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SpaceMutants #fyp",
+                "facebook": "Why is this so satisfying to look at? \ud83d\ude35\n\nManage AI has sourced a rare \"Space Mutants\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SpaceMutants"
+            },
+            "game_stats": {
+                "str": 70,
+                "int": 49,
+                "dex": 59
+            },
+            "skills": [
+                "Speed",
+                "Diplomacy",
+                "Agility"
+            ]
+        }
     }
 ]
