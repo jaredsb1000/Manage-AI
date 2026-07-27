@@ -3979,5 +3979,31 @@
                 "Agility"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-07-27T12:11:16.682421",
+        "data": {
+            "name": "Sourcing Set: Ed, Edd, Eddy",
+            "price": 10,
+            "profit": 9.0,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Why is this so satisfying to look at? \ud83d\ude35\n\nCheck out this trippy Ed, Edd, Eddy art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #Ed,Edd,Eddy #fyp",
+                "facebook": "Why is this so satisfying to look at? \ud83d\ude35\n\nManage AI has sourced a rare \"Ed, Edd, Eddy\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #Ed,Edd,Eddy"
+            },
+            "game_stats": {
+                "str": 73,
+                "int": 87,
+                "dex": 100
+            },
+            "skills": [
+                "Agility",
+                "Speed",
+                "Hacking",
+                "Strength"
+            ]
+        }
     }
 ]
