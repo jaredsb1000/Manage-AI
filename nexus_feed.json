@@ -4055,5 +4055,30 @@
                 "Agility"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-07-30T10:58:48.073712",
+        "data": {
+            "name": "Sourcing Set: Road Runner",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Road Runner art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #RoadRunner #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Road Runner\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #RoadRunner"
+            },
+            "game_stats": {
+                "str": 47,
+                "int": 42,
+                "dex": 44
+            },
+            "skills": [
+                "Data Mining",
+                "Agility",
+                "Diplomacy"
+            ]
+        }
     }
 ]
