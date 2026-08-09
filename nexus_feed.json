@@ -4310,5 +4310,32 @@
                 "Engineering"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-08-09T09:29:00.702418",
+        "data": {
+            "name": "Sourcing Set: Green Dinosaur Mount",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Green Dinosaur Mount art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #GreenDinosaurMount #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Green Dinosaur Mount\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #GreenDinosaurMount"
+            },
+            "game_stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 100
+            },
+            "skills": [
+                "Agility",
+                "Sorcery",
+                "Diplomacy",
+                "Engineering",
+                "Speed"
+            ]
+        }
     }
 ]
