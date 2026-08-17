@@ -4524,5 +4524,32 @@
                 "Engineering"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-08-17T09:30:43.556430",
+        "data": {
+            "name": "Sourcing Set: Samurai Warrior",
+            "price": 50,
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Samurai Warrior art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SamuraiWarrior #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Samurai Warrior\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SamuraiWarrior"
+            },
+            "game_stats": {
+                "str": 100,
+                "int": 100,
+                "dex": 86
+            },
+            "skills": [
+                "Stealth",
+                "Diplomacy",
+                "Telepathy",
+                "Strength",
+                "Engineering"
+            ]
+        }
     }
 ]
