@@ -4749,6 +4749,32 @@
                 "Strength",
                 "Engineering"
             ]
+        },
+        {
+            "name": "Sourcing Set: Big Eared Mouse [ULTRA_RARE]",
+            "price": 50,
+            "physical_value": 500,
+            "rarity": "ULTRA_RARE",
+            "profit": 47.0,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Why is this so satisfying to look at? \ud83d\ude35\n\nCheck out this trippy Big Eared Mouse art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #BigEaredMouse #fyp",
+                "facebook": "Why is this so satisfying to look at? \ud83d\ude35\n\nManage AI has sourced a rare \"Big Eared Mouse\" piece. \ud83c\udfa8\nOnly 50.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #BigEaredMouse"
+            },
+            "status": "Virtual",
+            "art_url": "images/265494.jpg",
+            "game_stats": {
+                "str": 100,
+                "int": 86,
+                "dex": 100
+            },
+            "skills": [
+                "Stealth",
+                "Sorcery",
+                "Hacking",
+                "Telepathy",
+                "Strength"
+            ]
         }
     ],
     "family_protocols": {
