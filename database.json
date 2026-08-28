@@ -5007,6 +5007,31 @@
                 "Sorcery",
                 "Engineering"
             ]
+        },
+        {
+            "name": "Sourcing Set: Web Vigilante [EPIC]",
+            "price": 10,
+            "physical_value": 40,
+            "rarity": "EPIC",
+            "profit": 9.0,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Web Vigilante art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #WebVigilante #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Web Vigilante\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #WebVigilante"
+            },
+            "status": "Virtual",
+            "art_url": "images/663886.jpg",
+            "game_stats": {
+                "str": 84,
+                "int": 61,
+                "dex": 73
+            },
+            "skills": [
+                "Data Mining",
+                "Strength",
+                "Stealth",
+                "Diplomacy"
+            ]
         }
     ],
     "family_protocols": {
