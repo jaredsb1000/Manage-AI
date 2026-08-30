@@ -5056,6 +5056,30 @@
                 "Diplomacy",
                 "Stealth"
             ]
+        },
+        {
+            "name": "Sourcing Set: Yellow Family [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Yellow Family art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #YellowFamily #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Yellow Family\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #YellowFamily"
+            },
+            "status": "Virtual",
+            "art_url": "images/793857.jpg",
+            "game_stats": {
+                "str": 69,
+                "int": 70,
+                "dex": 42
+            },
+            "skills": [
+                "Agility",
+                "Speed",
+                "Fireball"
+            ]
         }
     ],
     "family_protocols": {
