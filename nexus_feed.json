@@ -5123,5 +5123,30 @@
                 "Hacking"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-09-09T13:15:29.125180",
+        "data": {
+            "name": "Sourcing Set: Space Cowboy",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Space Cowboy art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SpaceCowboy #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Space Cowboy\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SpaceCowboy"
+            },
+            "game_stats": {
+                "str": 68,
+                "int": 59,
+                "dex": 41
+            },
+            "skills": [
+                "Fireball",
+                "Sorcery",
+                "Hacking"
+            ]
+        }
     }
 ]
