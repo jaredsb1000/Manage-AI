@@ -5371,6 +5371,31 @@
                 "Strength",
                 "Engineering"
             ]
+        },
+        {
+            "name": "Sourcing Set: Numbuh 4 [EPIC]",
+            "price": 10,
+            "physical_value": 40,
+            "rarity": "EPIC",
+            "profit": 9.0,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Numbuh 4 art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #Numbuh4 #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Numbuh 4\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #Numbuh4"
+            },
+            "status": "Virtual",
+            "art_url": "images/479263.jpg",
+            "game_stats": {
+                "str": 100,
+                "int": 85,
+                "dex": 88
+            },
+            "skills": [
+                "Agility",
+                "Data Mining",
+                "Stealth",
+                "Telepathy"
+            ]
         }
     ],
     "family_protocols": {
