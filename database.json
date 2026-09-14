@@ -5420,6 +5420,30 @@
                 "Sorcery",
                 "Data Mining"
             ]
+        },
+        {
+            "name": "Sourcing Set: Turtle Ninjas [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Turtle Ninjas art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #TurtleNinjas #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Turtle Ninjas\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #TurtleNinjas"
+            },
+            "status": "Virtual",
+            "art_url": "images/473906.jpg",
+            "game_stats": {
+                "str": 69,
+                "int": 56,
+                "dex": 45
+            },
+            "skills": [
+                "Stealth",
+                "Engineering",
+                "Agility"
+            ]
         }
     ],
     "family_protocols": {
