@@ -5444,6 +5444,30 @@
                 "Engineering",
                 "Agility"
             ]
+        },
+        {
+            "name": "Sourcing Set: Princess of Power [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Princess of Power art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #PrincessofPower #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Princess of Power\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #PrincessofPower"
+            },
+            "status": "Virtual",
+            "art_url": "images/153148.jpg",
+            "game_stats": {
+                "str": 45,
+                "int": 46,
+                "dex": 66
+            },
+            "skills": [
+                "Stealth",
+                "Engineering",
+                "Fireball"
+            ]
         }
     ],
     "family_protocols": {
