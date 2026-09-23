@@ -5475,5 +5475,30 @@
                 "Diplomacy"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-09-23T13:57:57.841086",
+        "data": {
+            "name": "Sourcing Set: Web Vigilante",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Web Vigilante art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #WebVigilante #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Web Vigilante\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #WebVigilante"
+            },
+            "game_stats": {
+                "str": 40,
+                "int": 47,
+                "dex": 63
+            },
+            "skills": [
+                "Agility",
+                "Speed",
+                "Combat"
+            ]
+        }
     }
 ]
