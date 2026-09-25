@@ -5525,5 +5525,30 @@
                 "Engineering"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-09-25T14:18:16.527541",
+        "data": {
+            "name": "Sourcing Set: Electric Rodent",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "I can't believe this actually exists... \ud83e\udd2f\n\nCheck out this trippy Electric Rodent art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #ElectricRodent #fyp",
+                "facebook": "I can't believe this actually exists... \ud83e\udd2f\n\nManage AI has sourced a rare \"Electric Rodent\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #ElectricRodent"
+            },
+            "game_stats": {
+                "str": 41,
+                "int": 51,
+                "dex": 54
+            },
+            "skills": [
+                "Stealth",
+                "Combat",
+                "Speed"
+            ]
+        }
     }
 ]
