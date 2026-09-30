@@ -5650,5 +5650,30 @@
                 "Data Mining"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-09-30T15:28:14.650561",
+        "data": {
+            "name": "Sourcing Set: Evil Genius",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Evil Genius art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #EvilGenius #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Evil Genius\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #EvilGenius"
+            },
+            "game_stats": {
+                "str": 42,
+                "int": 42,
+                "dex": 51
+            },
+            "skills": [
+                "Stealth",
+                "Strength",
+                "Data Mining"
+            ]
+        }
     }
 ]
