@@ -5829,6 +5829,30 @@
                 "Strength",
                 "Data Mining"
             ]
+        },
+        {
+            "name": "Sourcing Set: Wallaby Foster [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Wallaby Foster art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #WallabyFoster #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Wallaby Foster\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #WallabyFoster"
+            },
+            "status": "Virtual",
+            "art_url": "images/105928.jpg",
+            "game_stats": {
+                "str": 66,
+                "int": 55,
+                "dex": 63
+            },
+            "skills": [
+                "Speed",
+                "Telepathy",
+                "Fireball"
+            ]
         }
     ],
     "family_protocols": {
