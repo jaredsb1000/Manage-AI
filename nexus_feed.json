@@ -5725,5 +5725,30 @@
                 "Strength"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-10-03T14:04:15.635896",
+        "data": {
+            "name": "Sourcing Set: Submarine Captain",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Submarine Captain art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SubmarineCaptain #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Submarine Captain\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SubmarineCaptain"
+            },
+            "game_stats": {
+                "str": 53,
+                "int": 60,
+                "dex": 42
+            },
+            "skills": [
+                "Strength",
+                "Diplomacy",
+                "Fireball"
+            ]
+        }
     }
 ]
