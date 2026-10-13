@@ -5975,5 +5975,31 @@
                 "Combat"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-10-13T16:35:16.731591",
+        "data": {
+            "name": "Sourcing Set: Boy Genius",
+            "price": 10,
+            "profit": 9.0,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nCheck out this trippy Boy Genius art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #BoyGenius #fyp",
+                "facebook": "POV: This {character} art is illegal levels of cool \ud83d\udd25\n\nManage AI has sourced a rare \"Boy Genius\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #BoyGenius"
+            },
+            "game_stats": {
+                "str": 67,
+                "int": 84,
+                "dex": 96
+            },
+            "skills": [
+                "Speed",
+                "Diplomacy",
+                "Data Mining",
+                "Telepathy"
+            ]
+        }
     }
 ]
