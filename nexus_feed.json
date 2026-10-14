@@ -6001,5 +6001,30 @@
                 "Telepathy"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-10-14T14:11:30.270412",
+        "data": {
+            "name": "Sourcing Set: Star Soldier",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Star Soldier art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #StarSoldier #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Star Soldier\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #StarSoldier"
+            },
+            "game_stats": {
+                "str": 51,
+                "int": 43,
+                "dex": 66
+            },
+            "skills": [
+                "Speed",
+                "Telepathy",
+                "Fireball"
+            ]
+        }
     }
 ]
