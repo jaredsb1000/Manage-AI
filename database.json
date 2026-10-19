@@ -6264,6 +6264,31 @@
                 "Strength",
                 "Stealth"
             ]
+        },
+        {
+            "name": "Sourcing Set: Wooden Puppet [EPIC]",
+            "price": 10,
+            "physical_value": 40,
+            "rarity": "EPIC",
+            "profit": 9.0,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Wooden Puppet art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #WoodenPuppet #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Wooden Puppet\" piece. \ud83c\udfa8\nOnly 10.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #WoodenPuppet"
+            },
+            "status": "Virtual",
+            "art_url": "images/895905.jpg",
+            "game_stats": {
+                "str": 63,
+                "int": 69,
+                "dex": 75
+            },
+            "skills": [
+                "Combat",
+                "Diplomacy",
+                "Data Mining",
+                "Engineering"
+            ]
         }
     ],
     "family_protocols": {
