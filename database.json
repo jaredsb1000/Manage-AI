@@ -6385,6 +6385,30 @@
                 "Data Mining",
                 "Strength"
             ]
+        },
+        {
+            "name": "Sourcing Set: Number 4 [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "TRENDING",
+            "social_kit": {
+                "tiktok": "Nobody knows about this yet... \ud83d\ude24\n\nCheck out this trippy Number 4 art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #Number4 #fyp",
+                "facebook": "Nobody knows about this yet... \ud83d\ude24\n\nManage AI has sourced a rare \"Number 4\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #Number4"
+            },
+            "status": "Virtual",
+            "art_url": "https://pollinations.ai/p/Trippy-Psychedelic,-Vibrant-Colors-digital-art-of-Number-4,-highly-detailed,-vibrant-colors?width=600&height=400&seed=278972&nologo=true&enhance=true",
+            "game_stats": {
+                "str": 58,
+                "int": 49,
+                "dex": 70
+            },
+            "skills": [
+                "Diplomacy",
+                "Data Mining",
+                "Agility"
+            ]
         }
     ],
     "family_protocols": {
