@@ -6329,5 +6329,30 @@
                 "Data Mining"
             ]
         }
+    },
+    {
+        "source": "Manage AI v18.0",
+        "timestamp": "2026-10-27T15:01:16.183146",
+        "data": {
+            "name": "Sourcing Set: Submarine Captain",
+            "price": 5,
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "status": "Virtual",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Submarine Captain art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SubmarineCaptain #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Submarine Captain\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SubmarineCaptain"
+            },
+            "game_stats": {
+                "str": 58,
+                "int": 61,
+                "dex": 42
+            },
+            "skills": [
+                "Agility",
+                "Engineering",
+                "Stealth"
+            ]
+        }
     }
 ]

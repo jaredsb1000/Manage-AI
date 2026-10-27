@@ -6457,6 +6457,30 @@
                 "Agility",
                 "Data Mining"
             ]
+        },
+        {
+            "name": "Sourcing Set: Submarine Captain [NORMAL]",
+            "price": 5,
+            "physical_value": 20,
+            "rarity": "NORMAL",
+            "profit": 4.25,
+            "market_trend": "STABLE",
+            "social_kit": {
+                "tiktok": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nCheck out this trippy Submarine Captain art I just found! \ud83c\udfa8\nIt comes with a sourcing receipt too.\n\nLink in Bio! \ud83d\udc47\n#spoofart #trippy #aiart #SubmarineCaptain #fyp",
+                "facebook": "Stop scrolling! You NEED to see this \ud83d\udc47\n\nManage AI has sourced a rare \"Submarine Captain\" piece. \ud83c\udfa8\nOnly 5.00 for receipt + link.\n\nClick to link to view/buy! \ud83d\udc47\n#familyvault #digitalart #SubmarineCaptain"
+            },
+            "status": "Virtual",
+            "art_url": "https://pollinations.ai/p/Trippy-Psychedelic,-Vibrant-Colors-digital-art-of-Submarine-Captain,-highly-detailed,-vibrant-colors?width=600&height=400&seed=774609&nologo=true&enhance=true",
+            "game_stats": {
+                "str": 58,
+                "int": 61,
+                "dex": 42
+            },
+            "skills": [
+                "Agility",
+                "Engineering",
+                "Stealth"
+            ]
         }
     ],
     "family_protocols": {
